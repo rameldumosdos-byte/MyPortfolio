@@ -1,0 +1,507 @@
+/* =========================================================
+   EXPERIENCE DOCUMENT MODAL
+========================================================= */
+
+.experience-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* =========================================================
+   ACTIVE MODAL
+========================================================= */
+
+.experience-modal.active {
+    display: flex;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.experience-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(2, 6, 12, 0.82);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.experience-modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(620px, 100%);
+
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border: 1px solid rgba(96, 165, 250, 0.16);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1521,
+            #080d15
+        );
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.55),
+        0 0 50px rgba(30, 64, 175, 0.08);
+
+    transform: translateY(15px) scale(0.98);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.experience-modal.active .experience-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   TOP BLUE LINE
+========================================================= */
+
+.experience-modal-content::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #3b82f6,
+            #60a5fa,
+            transparent
+        );
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.experience-modal-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 5;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    color: #64748b;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.experience-modal-close:hover {
+    border-color: rgba(96, 165, 250, 0.25);
+
+    background: rgba(59, 130, 246, 0.08);
+
+    color: #93c5fd;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.experience-modal-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding-right: 45px;
+}
+
+
+/* =========================================================
+   MODAL ICON
+========================================================= */
+
+.experience-modal-icon {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(96, 165, 250, 0.16);
+
+    border-radius: 13px;
+
+    background: rgba(59, 130, 246, 0.07);
+
+    color: #60a5fa;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(30, 64, 175, 0.10);
+}
+
+
+/* =========================================================
+   MODAL LABEL
+========================================================= */
+
+.experience-modal-label {
+    margin: 0;
+
+    color: #60a5fa;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MODAL TITLE
+========================================================= */
+
+.experience-modal-header h2 {
+    margin: 5px 0 0;
+
+    color: #f8fafc;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.experience-modal-body {
+    margin-top: 26px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.experience-modal-description {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   DOCUMENT PREVIEW
+========================================================= */
+
+.experience-document-preview {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 22px;
+
+    padding: 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.055);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #090f18,
+            #070b12
+        );
+}
+
+
+.experience-document-preview > i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(96, 165, 250, 0.13);
+
+    border-radius: 10px;
+
+    background: rgba(59, 130, 246, 0.06);
+
+    color: #60a5fa;
+
+    font-size: 20px;
+}
+
+
+.experience-document-preview strong {
+    display: block;
+
+    color: #e2e8f0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+.experience-document-preview span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #475569;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL ACTIONS
+========================================================= */
+
+.experience-modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 22px;
+}
+
+
+.experience-modal-actions .button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.experience-modal-actions .button i {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BODY LOCK
+========================================================= */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .experience-modal {
+        padding: 15px;
+    }
+
+
+    .experience-modal-content {
+        max-height: calc(100vh - 30px);
+
+        padding: 23px;
+
+        border-radius: 15px;
+    }
+
+
+    .experience-modal-header {
+        gap: 12px;
+
+        padding-right: 40px;
+    }
+
+
+    .experience-modal-icon {
+        width: 44px;
+        height: 44px;
+
+        border-radius: 11px;
+
+        font-size: 19px;
+    }
+
+
+    .experience-modal-header h2 {
+        font-size: 17px;
+    }
+
+
+    .experience-modal-description {
+        font-size: 12px;
+
+        line-height: 1.8;
+    }
+
+
+    .experience-modal-actions {
+        justify-content: stretch;
+    }
+
+
+    .experience-modal-actions .button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .experience-modal-content {
+        padding: 20px;
+    }
+
+
+    .experience-modal-header {
+        align-items: flex-start;
+    }
+
+
+    .experience-modal-label {
+        font-size: 8px;
+    }
+
+
+    .experience-modal-header h2 {
+        font-size: 16px;
+    }
+
+}

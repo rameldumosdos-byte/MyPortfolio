@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TLO-ITSO | Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+     <link rel="stylesheet" href="../css/tlo-itso.css">
+     <link rel="icon" type="image/png" href="../images/rd.png">
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                T
+            </div>
+
+            <div class="logo-text">
+                <strong>TLO-ITSO</strong>
+                <span>INTELLECTUAL PROPERTY SYSTEM</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="sidebar-menu">
+
+        <div class="menu-title">
+            Main Menu
+        </div>
+
+        <a href="#" class="menu-item active">
+            <i class='bx bx-grid-alt'></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-file'></i>
+            <span>Applications</span>
+            <span class="menu-badge">12</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-time-five'></i>
+            <span>Pending Review</span>
+            <span class="menu-badge">7</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-check-circle'></i>
+            <span>Approved</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-x-circle'></i>
+            <span>Rejected</span>
+        </a>
+
+
+        <div class="menu-title" style="margin-top:25px;">
+            Management
+        </div>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-user'></i>
+            <span>Students</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-category'></i>
+            <span>Application Types</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-bar-chart-alt-2'></i>
+            <span>Reports</span>
+        </a>
+
+
+        <div class="menu-title" style="margin-top:25px;">
+            System
+        </div>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-cog'></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class='bx bx-help-circle'></i>
+            <span>Help & Support</span>
+        </a>
+
+    </div>
+
+
+    <div class="sidebar-footer">
+
+        <div class="user-mini">
+
+            <div class="avatar">
+                AD
+            </div>
+
+            <div class="user-mini-info">
+                <strong>Admin User</strong>
+                <span>Administrator</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ===================================================== -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="mobile-menu" id="mobileMenu">
+                <i class='bx bx-menu'></i>
+            </button>
+
+            <div class="page-title">
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Technology Licensing Office & Intellectual Property and Technology Support Office
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <button class="top-icon">
+                <i class='bx bx-search'></i>
+            </button>
+
+            <button class="top-icon">
+                <i class='bx bx-bell'></i>
+                <span class="notification-dot"></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTENT
+    ===================================================== -->
+
+    <section class="content">
+
+
+        <!-- =================================================
+             WELCOME
+        ================================================= -->
+
+        <div class="welcome">
+
+            <div class="welcome-text">
+
+                <h2>
+                    Welcome back, Administrator
+                </h2>
+
+                <p>
+                    Manage and monitor student intellectual property
+                    applications, review submissions, and track application
+                    progress from one centralized platform.
+                </p>
+
+            </div>
+
+            <button class="welcome-button" onclick="openApplicationModal()">
+
+                <i class='bx bx-plus'></i>
+
+                New Application
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================= -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon red">
+                        <i class='bx bx-file'></i>
+                    </div>
+
+                    <span class="stat-change">
+                        +12.5%
+                    </span>
+
+                </div>
+
+                <h3>
+                    148
+                </h3>
+
+                <p>
+                    Total Applications
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon orange">
+                        <i class='bx bx-time-five'></i>
+                    </div>
+
+                    <span class="stat-change">
+                        +4.2%
+                    </span>
+
+                </div>
+
+                <h3>
+                    27
+                </h3>
+
+                <p>
+                    Pending Applications
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon blue">
+                        <i class='bx bx-search-alt'></i>
+                    </div>
+
+                    <span class="stat-change">
+                        +8.1%
+                    </span>
+
+                </div>
+
+                <h3>
+                    19
+                </h3>
+
+                <p>
+                    Under Review
+                </p>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon green">
+                        <i class='bx bx-check-circle'></i>
+                    </div>
+
+                    <span class="stat-change">
+                        +15.8%
+                    </span>
+
+                </div>
+
+                <h3>
+                    102
+                </h3>
+
+                <p>
+                    Approved Applications
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CHART + APPLICATION TYPES
+        ================================================= -->
+
+        <div class="dashboard-grid">
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>
+                            Application Overview
+                        </h3>
+
+                        <span>
+                            Applications submitted this year
+                        </span>
+                    </div>
+
+                    <span>
+                        2026
+                    </span>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="applicationChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h3>
+                            Application Types
+                        </h3>
+
+                        <span>
+                            Total submitted
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="type-list">
+
+
+                    <div class="type-item">
+
+                        <div class="type-icon copyright">
+                            <i class='bx bx-copyright'></i>
+                        </div>
+
+                        <div class="type-info">
+
+                            <strong>
+                                Copyright
+                            </strong>
+
+                            <span>
+                                Copyright applications
+                            </span>
+
+                        </div>
+
+                        <div class="type-count">
+                            76
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="type-item">
+
+                        <div class="type-icon patent">
+                            <i class='bx bx-bulb'></i>
+                        </div>
+
+                        <div class="type-info">
+
+                            <strong>
+                                Patent
+                            </strong>
+
+                            <span>
+                                Patent applications
+                            </span>
+
+                        </div>
+
+                        <div class="type-count">
+                            43
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="type-item">
+
+                        <div class="type-icon design">
+                            <i class='bx bx-shape-triangle'></i>
+                        </div>
+
+                        <div class="type-info">
+
+                            <strong>
+                                Industrial Design
+                            </strong>
+
+                            <span>
+                                Design applications
+                            </span>
+
+                        </div>
+
+                        <div class="type-count">
+                            29
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RECENT APPLICATIONS
+        ================================================= -->
+
+        <div class="card table-card">
+
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        Recent Applications
+                    </h3>
+
+                    <span>
+                        Latest student submissions
+                    </span>
+
+                </div>
+
+                <a href="#" style="
+                    color:#a70000;
+                    font-size:10px;
+                    font-weight:700;
+                ">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Application ID
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Application Type
+                            </th>
+
+                            <th>
+                                Submitted
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                <span class="application-id">
+                                    TLO-2026-0148
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="student">
+
+                                    <div class="student-avatar">
+                                        JD
+                                    </div>
+
+                                    <div class="student-name">
+
+                                        <strong>
+                                            Juan Dela Cruz
+                                        </strong>
+
+                                        <span>
+                                            BTTE - CP
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="type-label">
+
+                                    <span class="type-dot"></span>
+
+                                    Copyright
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Sep 05, 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status pending">
+                                    Pending Review
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewApplication('TLO-2026-0148','Juan Dela Cruz','Copyright','BTTE - CP','Sep 05, 2026','Pending Review')">
+
+                                    <i class='bx bx-show'></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                <span class="application-id">
+                                    TLO-2026-0147
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="student">
+
+                                    <div class="student-avatar">
+                                        MS
+                                    </div>
+
+                                    <div class="student-name">
+
+                                        <strong>
+                                            Maria Santos
+                                        </strong>
+
+                                        <span>
+                                            BSME
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="type-label">
+
+                                    <span class="type-dot"></span>
+
+                                    Patent
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Sep 04, 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status review">
+                                    Under Review
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewApplication('TLO-2026-0147','Maria Santos','Patent','BSME','Sep 04, 2026','Under Review')">
+
+                                    <i class='bx bx-show'></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                <span class="application-id">
+                                    TLO-2026-0146
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="student">
+
+                                    <div class="student-avatar">
+                                        RL
+                                    </div>
+
+                                    <div class="student-name">
+
+                                        <strong>
+                                            Rafael Lim
+                                        </strong>
+
+                                        <span>
+                                            BSEE
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="type-label">
+
+                                    <span class="type-dot"></span>
+
+                                    Industrial Design
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Sep 03, 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status approved">
+                                    Approved
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewApplication('TLO-2026-0146','Rafael Lim','Industrial Design','BSEE','Sep 03, 2026','Approved')">
+
+                                    <i class='bx bx-show'></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                <span class="application-id">
+                                    TLO-2026-0145
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="student">
+
+                                    <div class="student-avatar">
+                                        AC
+                                    </div>
+
+                                    <div class="student-name">
+
+                                        <strong>
+                                            Andrea Cruz
+                                        </strong>
+
+                                        <span>
+                                            BTVTEd
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="type-label">
+
+                                    <span class="type-dot"></span>
+
+                                    Copyright
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Sep 02, 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status review">
+                                    Under Review
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewApplication('TLO-2026-0145','Andrea Cruz','Copyright','BTVTEd','Sep 02, 2026','Under Review')">
+
+                                    <i class='bx bx-show'></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                <span class="application-id">
+                                    TLO-2026-0144
+                                </span>
+                            </td>
+
+                            <td>
+
+                                <div class="student">
+
+                                    <div class="student-avatar">
+                                        KP
+                                    </div>
+
+                                    <div class="student-name">
+
+                                        <strong>
+                                            Kevin Pascual
+                                        </strong>
+
+                                        <span>
+                                            BSIT
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                <span class="type-label">
+
+                                    <span class="type-dot"></span>
+
+                                    Patent
+
+                                </span>
+
+                            </td>
+
+                            <td>
+                                Sep 01, 2026
+                            </td>
+
+                            <td>
+
+                                <span class="status rejected">
+                                    Returned
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewApplication('TLO-2026-0144','Kevin Pascual','Patent','BSIT','Sep 01, 2026','Returned')">
+
+                                    <i class='bx bx-show'></i>
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             BOTTOM
+        ================================================= -->
+
+        <div class="bottom-grid">
+
+
+            <!-- ACTIVITY -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Recent Activity
+                        </h3>
+
+                        <span>
+                            System activity
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-list">
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class='bx bx-file-plus'></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <p>
+                                <strong>
+                                    Juan Dela Cruz
+                                </strong>
+                                submitted a new Copyright application.
+                            </p>
+
+                            <span>
+                                15 minutes ago
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class='bx bx-check'></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <p>
+                                Application
+                                <strong>
+                                    TLO-2026-0146
+                                </strong>
+                                was approved.
+                            </p>
+
+                            <span>
+                                1 hour ago
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class='bx bx-search'></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <p>
+                                <strong>
+                                    Admin User
+                                </strong>
+                                started reviewing TLO-2026-0147.
+                            </p>
+
+                            <span>
+                                2 hours ago
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            <i class='bx bx-user-plus'></i>
+                        </div>
+
+                        <div class="activity-info">
+
+                            <p>
+                                New student account registered.
+                            </p>
+
+                            <span>
+                                3 hours ago
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- WORKFLOW -->
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Application Workflow
+                        </h3>
+
+                        <span>
+                            TLO-2026-0148
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="workflow">
+
+
+                    <div class="workflow-step completed">
+
+                        <div class="workflow-line"></div>
+
+                        <div class="workflow-number">
+                            <i class='bx bx-check'></i>
+                        </div>
+
+                        <div class="workflow-info">
+
+                            <strong>
+                                Application Submitted
+                            </strong>
+
+                            <span>
+                                Student submitted application · Sep 05
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-step current">
+
+                        <div class="workflow-line"></div>
+
+                        <div class="workflow-number">
+                            2
+                        </div>
+
+                        <div class="workflow-info">
+
+                            <strong>
+                                Initial Review
+                            </strong>
+
+                            <span>
+                                Application is waiting for administrator review
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-line"></div>
+
+                        <div class="workflow-number">
+                            3
+                        </div>
+
+                        <div class="workflow-info">
+
+                            <strong>
+                                Technical Evaluation
+                            </strong>
+
+                            <span>
+                                Evaluation by TLO-ITSO staff
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="workflow-step">
+
+                        <div class="workflow-number">
+                            4
+                        </div>
+
+                        <div class="workflow-info">
+
+                            <strong>
+                                Final Decision
+                            </strong>
+
+                            <span>
+                                Approval or return of application
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     APPLICATION MODAL
+========================================================= -->
+
+<div class="modal" id="applicationModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h3>
+                Application Details
+            </h3>
+
+            <button
+                class="modal-close"
+                onclick="closeApplicationModal()">
+
+                <i class='bx bx-x'></i>
+
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="detail-grid">
+
+                <div class="detail">
+
+                    <label>
+                        Application ID
+                    </label>
+
+                    <strong id="modalApplicationId">
+                        TLO-2026-0148
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <strong id="modalStatus">
+                        Pending Review
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <label>
+                        Student
+                    </label>
+
+                    <strong id="modalStudent">
+                        Juan Dela Cruz
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <label>
+                        Program
+                    </label>
+
+                    <strong id="modalProgram">
+                        BTTE - CP
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <label>
+                        Application Type
+                    </label>
+
+                    <strong id="modalType">
+                        Copyright
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <label>
+                        Date Submitted
+                    </label>
+
+                    <strong id="modalDate">
+                        Sep 05, 2026
+                    </strong>
+
+                </div>
+
+
+                <div class="detail full">
+
+                    <label>
+                        Application Description
+                    </label>
+
+                    <strong>
+                        Intellectual property application submitted
+                        by the student as part of their thesis-related
+                        requirements.
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                class="modal-btn"
+                onclick="closeApplicationModal()">
+
+                Close
+
+            </button>
+
+            <button
+                class="modal-btn primary">
+
+                <i class='bx bx-search'></i>
+
+                Review Application
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="../js/tlo-itso.js"></script>
+
+</body>
+</html>

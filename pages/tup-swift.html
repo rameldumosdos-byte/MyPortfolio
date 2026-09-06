@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TUP-SWIFT | Dashboard</title>
+     <link rel="stylesheet" href="../css/swift.css">
+     <link rel="icon" type="image/png" href="../images/rd.png">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="tup-logo">
+                TUP
+            </div>
+
+            <div class="brand-text">
+                <h2>TUP-SWIFT</h2>
+                <span>Workflow Tracker</span>
+            </div>
+
+        </div>
+
+        <div class="sidebar-content">
+
+            <div class="menu-label">
+                Main
+            </div>
+
+            <button class="nav-item active">
+                <span class="nav-icon">⌂</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">▣</span>
+                Transactions
+                <span class="nav-badge">24</span>
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">＋</span>
+                Create Transaction
+            </button>
+
+            <div class="menu-label">
+                Workflow
+            </div>
+
+            <button class="nav-item">
+                <span class="nav-icon">⇄</span>
+                Workflow Management
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">⌁</span>
+                Tracker / Devices
+                <span class="nav-badge">6</span>
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">▤</span>
+                Offices
+            </button>
+
+            <div class="menu-label">
+                Management
+            </div>
+
+            <button class="nav-item">
+                <span class="nav-icon">♙</span>
+                Faculty Users
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">◫</span>
+                Reports
+            </button>
+
+            <button class="nav-item">
+                <span class="nav-icon">⚙</span>
+                Settings
+            </button>
+
+        </div>
+
+        <div class="sidebar-user">
+
+            <div class="user-card">
+
+                <div class="avatar">
+                    AD
+                </div>
+
+                <div class="user-info">
+                    <strong>Admin User</strong>
+                    <span>System Administrator</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="overlay"></div>
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu" id="mobileMenu">
+                    ☰
+                </button>
+
+                <div class="page-title">
+
+                    <h1>Dashboard</h1>
+
+                    <p>
+                        TUP Smart Workflow &amp; Integrated Filing Tracker
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search transactions..."
+                    >
+
+                </div>
+
+                <button class="icon-btn">
+                    ◔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <button class="icon-btn">
+                    ⚙
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+            <!-- WELCOME -->
+
+            <div class="welcome">
+
+                <div>
+                    <h2>Good morning, Admin.</h2>
+
+                    <p>
+                        Here's what's happening with your university workflows today.
+                    </p>
+                </div>
+
+                <div class="date-label">
+                    Saturday, September 5, 2026
+                </div>
+
+            </div>
+
+
+            <!-- ADMIN ACTION BANNER -->
+
+            <div class="admin-banner">
+
+                <div>
+
+                    <h3>
+                        Workflow Administration
+                    </h3>
+
+                    <p>
+                        Manage office workflows, transaction routes and tracking devices.
+                    </p>
+
+                </div>
+
+                <div class="admin-actions">
+
+                    <button class="btn btn-white" onclick="openModal('workflowModal')">
+                        + New Workflow
+                    </button>
+
+                    <button class="btn btn-red" onclick="openModal('transactionModal')">
+                        + Transaction
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            Total Transactions
+                        </span>
+
+                        <div class="stat-icon">
+                            ▣
+                        </div>
+
+                    </div>
+
+                    <div class="stat-number">
+                        1,284
+                    </div>
+
+                    <div class="stat-footer">
+                        <strong>+12.5%</strong> compared to last month
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            In Process
+                        </span>
+
+                        <div class="stat-icon">
+                            ↻
+                        </div>
+
+                    </div>
+
+                    <div class="stat-number">
+                        186
+                    </div>
+
+                    <div class="stat-footer">
+                        Currently moving through workflows
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            Completed
+                        </span>
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+                    <div class="stat-number">
+                        1,047
+                    </div>
+
+                    <div class="stat-footer">
+                        <strong>94.2%</strong> completion rate
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span class="stat-label">
+                            Active Devices
+                        </span>
+
+                        <div class="stat-icon">
+                            ⌁
+                        </div>
+
+                    </div>
+
+                    <div class="stat-number">
+                        6 / 7
+                    </div>
+
+                    <div class="stat-footer">
+                        <strong>Online</strong> tracking devices
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIN GRID -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- TRANSACTIONS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Transactions</h3>
+
+                            <p>
+                                Latest documents moving through TUP-SWIFT workflows
+                            </p>
+                        </div>
+
+                        <button class="view-all">
+                            View all →
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-wrap">
+
+                        <table id="transactionTable">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Transaction</th>
+                                    <th>Faculty</th>
+                                    <th>Document</th>
+                                    <th>Current Office</th>
+                                    <th>Status</th>
+                                    <th>Updated</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td class="transaction-id">
+                                        SW-2026-001284
+                                    </td>
+
+                                    <td>
+
+                                        <div class="faculty-cell">
+
+                                            <div class="small-avatar">
+                                                JD
+                                            </div>
+
+                                            Juan Dela Cruz
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Travel Order
+                                    </td>
+
+                                    <td>
+                                        HR Office
+                                    </td>
+
+                                    <td>
+                                        <span class="status processing">
+                                            Processing
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        8 mins ago
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="transaction-id">
+                                        SW-2026-001283
+                                    </td>
+
+                                    <td>
+
+                                        <div class="faculty-cell">
+
+                                            <div class="small-avatar">
+                                                MS
+                                            </div>
+
+                                            Maria Santos
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Leave Application
+                                    </td>
+
+                                    <td>
+                                        College Dean
+                                    </td>
+
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        21 mins ago
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="transaction-id">
+                                        SW-2026-001282
+                                    </td>
+
+                                    <td>
+
+                                        <div class="faculty-cell">
+
+                                            <div class="small-avatar">
+                                                RP
+                                            </div>
+
+                                            Robert Perez
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Purchase Request
+                                    </td>
+
+                                    <td>
+                                        Supply Office
+                                    </td>
+
+                                    <td>
+                                        <span class="status processing">
+                                            Processing
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        42 mins ago
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="transaction-id">
+                                        SW-2026-001281
+                                    </td>
+
+                                    <td>
+
+                                        <div class="faculty-cell">
+
+                                            <div class="small-avatar">
+                                                AC
+                                            </div>
+
+                                            Ana Cruz
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Certificate Request
+                                    </td>
+
+                                    <td>
+                                        Registrar
+                                    </td>
+
+                                    <td>
+                                        <span class="status completed">
+                                            Completed
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        1 hr ago
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td class="transaction-id">
+                                        SW-2026-001280
+                                    </td>
+
+                                    <td>
+
+                                        <div class="faculty-cell">
+
+                                            <div class="small-avatar">
+                                                JM
+                                            </div>
+
+                                            Jose Martinez
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Official Business
+                                    </td>
+
+                                    <td>
+                                        VP Administration
+                                    </td>
+
+                                    <td>
+                                        <span class="status processing">
+                                            Processing
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        2 hrs ago
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WORKFLOW -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>Active Workflow</h3>
+
+                            <p>
+                                Transaction SW-2026-001284
+                            </p>
+
+                        </div>
+
+                        <button class="view-all">
+                            Details
+                        </button>
+
+                    </div>
+
+
+                    <div class="workflow-list">
+
+                        <div class="workflow-item">
+
+                            <div class="workflow-line"></div>
+
+                            <div class="workflow-dot">
+                                ✓
+                            </div>
+
+                            <div class="workflow-info">
+
+                                <strong>
+                                    Faculty Submission
+                                </strong>
+
+                                <span>
+                                    Submitted by Juan Dela Cruz · 9:02 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-item">
+
+                            <div class="workflow-line"></div>
+
+                            <div class="workflow-dot">
+                                ✓
+                            </div>
+
+                            <div class="workflow-info">
+
+                                <strong>
+                                    College Dean
+                                </strong>
+
+                                <span>
+                                    Approved · 9:14 AM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-item">
+
+                            <div class="workflow-line"></div>
+
+                            <div class="workflow-dot">
+                                3
+                            </div>
+
+                            <div class="workflow-info">
+
+                                <strong>
+                                    HR Office
+                                </strong>
+
+                                <span>
+                                    Currently processing · Device HR-01
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-item">
+
+                            <div class="workflow-line"></div>
+
+                            <div class="workflow-dot">
+                                4
+                            </div>
+
+                            <div class="workflow-info">
+
+                                <strong>
+                                    VP Administration
+                                </strong>
+
+                                <span>
+                                    Waiting for document
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="workflow-item">
+
+                            <div class="workflow-dot">
+                                5
+                            </div>
+
+                            <div class="workflow-info">
+
+                                <strong>
+                                    Faculty Release
+                                </strong>
+
+                                <span>
+                                    Final step
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TRACKING DEVICES -->
+
+            <div class="card tracker-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Live Device Tracker
+                        </h3>
+
+                        <p>
+                            Monitor document tracking devices deployed across offices
+                        </p>
+
+                    </div>
+
+                    <button class="view-all">
+                        Manage Devices →
+                    </button>
+
+                </div>
+
+
+                <div class="tracker-grid">
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="online"></span>
+
+                        </div>
+
+                        <h4>
+                            HR-01
+                        </h4>
+
+                        <p>
+                            Human Resources
+                        </p>
+
+                        <div class="device-count">
+                            18
+                        </div>
+
+                        <p>
+                            Active documents
+                        </p>
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="online"></span>
+
+                        </div>
+
+                        <h4>
+                            REG-01
+                        </h4>
+
+                        <p>
+                            Registrar
+                        </p>
+
+                        <div class="device-count">
+                            31
+                        </div>
+
+                        <p>
+                            Active documents
+                        </p>
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="online"></span>
+
+                        </div>
+
+                        <h4>
+                            DEAN-01
+                        </h4>
+
+                        <p>
+                            College Dean
+                        </p>
+
+                        <div class="device-count">
+                            12
+                        </div>
+
+                        <p>
+                            Active documents
+                        </p>
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="online"></span>
+
+                        </div>
+
+                        <h4>
+                            SUP-01
+                        </h4>
+
+                        <p>
+                            Supply Office
+                        </p>
+
+                        <div class="device-count">
+                            24
+                        </div>
+
+                        <p>
+                            Active documents
+                        </p>
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="online"></span>
+
+                        </div>
+
+                        <h4>
+                            FIN-01
+                        </h4>
+
+                        <p>
+                            Finance Office
+                        </p>
+
+                        <div class="device-count">
+                            9
+                        </div>
+
+                        <p>
+                            Active documents
+                        </p>
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <div class="device-top">
+
+                            <div class="device-icon">
+                                ⌁
+                            </div>
+
+                            <span class="offline"></span>
+
+                        </div>
+
+                        <h4>
+                            VP-01
+                        </h4>
+
+                        <p>
+                            VP Administration
+                        </p>
+
+                        <div class="device-count">
+                            0
+                        </div>
+
+                        <p>
+                            Device offline
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM GRID -->
+
+            <div class="bottom-grid">
+
+
+                <!-- OFFICES -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Office Activity
+                            </h3>
+
+                            <p>
+                                Current document volume
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="office-list">
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                HR
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Human Resources
+                                </strong>
+
+                                <span>
+                                    18 documents processing
+                                </span>
+
+                            </div>
+
+                            <div class="office-number">
+                                18
+                            </div>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                RG
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Registrar
+                                </strong>
+
+                                <span>
+                                    31 documents processing
+                                </span>
+
+                            </div>
+
+                            <div class="office-number">
+                                31
+                            </div>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                FN
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Finance
+                                </strong>
+
+                                <span>
+                                    9 documents processing
+                                </span>
+
+                            </div>
+
+                            <div class="office-number">
+                                9
+                            </div>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                SP
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Supply Office
+                                </strong>
+
+                                <span>
+                                    24 documents processing
+                                </span>
+
+                            </div>
+
+                            <div class="office-number">
+                                24
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECENT ACTIVITY -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Activity
+                            </h3>
+
+                            <p>
+                                System activity
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-row">
+
+                            <div class="activity-avatar">
+                                JD
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Juan submitted a transaction
+                                </strong>
+
+                                <span>
+                                    SW-2026-001284 · 8 mins ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-avatar">
+                                MS
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Maria approved a document
+                                </strong>
+
+                                <span>
+                                    SW-2026-001283 · 21 mins ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-avatar">
+                                AD
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Workflow was updated
+                                </strong>
+
+                                <span>
+                                    HR Travel Order · 35 mins ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-avatar">
+                                SY
+                            </div>
+
+                            <div class="activity-info">
+
+                                <strong>
+                                    Device HR-01 connected
+                                </strong>
+
+                                <span>
+                                    Human Resources · 1 hr ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SYSTEM SUMMARY -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                System Overview
+                            </h3>
+
+                            <p>
+                                TUP-SWIFT performance
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="office-list">
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                ✓
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Workflow Availability
+                                </strong>
+
+                                <span>
+                                    All active workflows operational
+                                </span>
+
+                            </div>
+
+                            <span class="status completed">
+                                Healthy
+                            </span>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                ⌁
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Device Network
+                                </strong>
+
+                                <span>
+                                    6 of 7 devices online
+                                </span>
+
+                            </div>
+
+                            <span class="status processing">
+                                Monitor
+                            </span>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                ▣
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    Transactions
+                                </strong>
+
+                                <span>
+                                    186 currently processing
+                                </span>
+
+                            </div>
+
+                            <span class="status pending">
+                                Active
+                            </span>
+
+                        </div>
+
+
+                        <div class="office-row">
+
+                            <div class="office-icon">
+                                ⚡
+                            </div>
+
+                            <div class="office-info">
+
+                                <strong>
+                                    System Response
+                                </strong>
+
+                                <span>
+                                    Average response 0.8 sec
+                                </span>
+
+                            </div>
+
+                            <span class="status completed">
+                                Good
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     WORKFLOW MODAL
+============================================================== -->
+
+<div class="modal" id="workflowModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h3>
+                    Create Workflow
+                </h3>
+
+                <p>
+                    Add a new transaction workflow
+                </p>
+
+            </div>
+
+            <button onclick="closeModal('workflowModal')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <label>
+                Workflow Name
+            </label>
+
+            <input
+                type="text"
+                placeholder="e.g. Travel Order"
+            >
+
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                placeholder="Describe this workflow..."
+            ></textarea>
+
+
+            <label>
+                Starting Office
+            </label>
+
+            <select>
+
+                <option>
+                    Faculty
+                </option>
+
+                <option>
+                    College Dean
+                </option>
+
+                <option>
+                    Department Office
+                </option>
+
+            </select>
+
+
+            <label>
+                Final Office
+            </label>
+
+            <select>
+
+                <option>
+                    Human Resources
+                </option>
+
+                <option>
+                    Registrar
+                </option>
+
+                <option>
+                    Finance
+                </option>
+
+                <option>
+                    VP Administration
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                class="btn btn-white"
+                onclick="closeModal('workflowModal')"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="btn btn-red"
+                onclick="saveWorkflow()"
+            >
+                Create Workflow
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =============================================================
+     TRANSACTION MODAL
+============================================================== -->
+
+<div class="modal" id="transactionModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <h3>
+                    Create Transaction
+                </h3>
+
+                <p>
+                    Start a new TUP-SWIFT transaction
+                </p>
+
+            </div>
+
+            <button onclick="closeModal('transactionModal')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <label>
+                Workflow
+            </label>
+
+            <select>
+
+                <option>
+                    Travel Order
+                </option>
+
+                <option>
+                    Leave Application
+                </option>
+
+                <option>
+                    Purchase Request
+                </option>
+
+                <option>
+                    Certificate Request
+                </option>
+
+                <option>
+                    Official Business
+                </option>
+
+            </select>
+
+
+            <label>
+                Document Title
+            </label>
+
+            <input
+                type="text"
+                placeholder="Enter document title"
+            >
+
+
+            <label>
+                Purpose
+            </label>
+
+            <textarea
+                placeholder="Enter transaction details..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                class="btn btn-white"
+                onclick="closeModal('transactionModal')"
+            >
+                Cancel
+            </button>
+
+            <button
+                class="btn btn-red"
+                onclick="createTransaction()"
+            >
+                Create Transaction
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/swift.js"></script>
+
+</body>
+</html>
