@@ -81,7 +81,7 @@ const projects = {
         disclosure:
             "TUP-SWIFT includes role-based access for Faculty and Admin users. Administrators have full access to dashboard monitoring, workflow configuration, office management, and transaction tracking, while Faculty users can create and monitor transactions based on workflows configured by administrators.",
 
-        repository: "#",
+        repository: "https://github.com/rameldumosdos-byte/tup-swift-demo",
 
         clone: "pages/tup-swift.html"
 
