@@ -189,7 +189,7 @@ const projects = {
         disclosure:
             "This project contains business-specific functionality, operational workflows, and information. Because of its business nature, the original system and its internal functionality are not publicly available.",
 
-        repository: "#",
+        repository: "https://github.com/rameldumosdos-byte/audisa-system-documentation",
 
         clone: "pages/audisa.html"
 
