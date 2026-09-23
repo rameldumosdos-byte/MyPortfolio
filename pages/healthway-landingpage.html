@@ -1,0 +1,4996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Healthway Cancer Care Hospital | Comprehensive Cancer Care
+    </title>
+
+    <meta
+        name="description"
+        content="Healthway Cancer Care Hospital — comprehensive, patient-centered cancer care in Taguig City."
+    >
+
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+            --hw-primary: #075b78;
+            --hw-primary-dark: #06455c;
+            --hw-primary-soft: #eaf5f7;
+
+            --hw-teal: #168d8d;
+            --hw-teal-soft: #e8f6f4;
+
+            --hw-green: #3b927b;
+
+            --hw-dark: #123341;
+            --hw-text: #284955;
+            --hw-muted: #71838b;
+
+            --hw-white: #ffffff;
+            --hw-offwhite: #f7fafb;
+            --hw-border: #dce8ec;
+
+            --hw-radius: 20px;
+
+            --hw-shadow:
+                0 20px 60px rgba(7, 55, 73, .10);
+
+            --hw-container: 1280px;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--hw-white);
+            color: var(--hw-text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        select {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: 0;
+        }
+
+        .hw-container {
+            width: min(
+                var(--hw-container),
+                calc(100% - 64px)
+            );
+
+            margin-inline: auto;
+        }
+
+
+        /* =========================================================
+           TOP CONTACT BAR
+        ========================================================= */
+
+        .hw-topbar {
+            background: var(--hw-primary-dark);
+            color: rgba(255,255,255,.86);
+        }
+
+        .hw-topbar-inner {
+            min-height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 12px;
+        }
+
+        .hw-topbar-left,
+        .hw-topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hw-topbar a:hover {
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           MAIN HEADER
+        ========================================================= */
+
+        .hw-header {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.96);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom:
+                1px solid var(--hw-border);
+        }
+
+        .hw-header-inner {
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .hw-logo {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            flex-shrink: 0;
+        }
+
+        .hw-logo-mark {
+            width: 47px;
+            height: 47px;
+
+            border-radius: 13px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--hw-primary);
+
+            color: #fff;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            letter-spacing: -.5px;
+        }
+
+        .hw-logo-text {
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.1;
+        }
+
+        .hw-logo-text strong {
+            color: var(--hw-primary-dark);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 15px;
+
+            letter-spacing: -.4px;
+        }
+
+        .hw-logo-text span {
+            margin-top: 4px;
+
+            color: var(--hw-muted);
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .hw-nav {
+            display: flex;
+            align-items: center;
+
+            gap: 25px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            color: #47616d;
+        }
+
+        .hw-nav > a,
+        .hw-nav-dropdown > button {
+            position: relative;
+
+            padding: 30px 0;
+
+            background: transparent;
+
+            color: inherit;
+
+            white-space: nowrap;
+        }
+
+        .hw-nav > a::after,
+        .hw-nav-dropdown > button::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 100%;
+            bottom: 22px;
+
+            height: 2px;
+
+            background: var(--hw-teal);
+
+            transition: .25s ease;
+        }
+
+        .hw-nav > a:hover,
+        .hw-nav-dropdown > button:hover {
+            color: var(--hw-primary);
+        }
+
+        .hw-nav > a:hover::after,
+        .hw-nav-dropdown > button:hover::after {
+            right: 0;
+        }
+
+
+        /* =========================================================
+           DROPDOWN
+        ========================================================= */
+
+        .hw-nav-dropdown {
+            position: relative;
+        }
+
+        .hw-nav-dropdown > button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .hw-dropdown {
+            position: absolute;
+
+            top: 72px;
+            left: -20px;
+
+            min-width: 220px;
+
+            padding: 10px;
+
+            background: #fff;
+
+            border: 1px solid var(--hw-border);
+
+            border-radius: 14px;
+
+            box-shadow: var(--hw-shadow);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform:
+                translateY(8px);
+
+            transition: .2s ease;
+        }
+
+        .hw-nav-dropdown:hover .hw-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .hw-dropdown a {
+            display: block;
+
+            padding: 11px 12px;
+
+            border-radius: 8px;
+
+            color: var(--hw-text);
+
+            font-size: 12px;
+        }
+
+        .hw-dropdown a:hover {
+            background: var(--hw-primary-soft);
+            color: var(--hw-primary);
+        }
+
+
+        /* =========================================================
+           HEADER BUTTONS
+        ========================================================= */
+
+        .hw-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .hw-btn {
+            min-height: 45px;
+
+            padding: 0 18px;
+
+            border-radius: 10px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .22s ease;
+        }
+
+        .hw-btn-primary {
+            background: var(--hw-primary);
+            color: #fff;
+
+            box-shadow:
+                0 8px 22px rgba(7,91,120,.16);
+        }
+
+        .hw-btn-primary:hover {
+            background: var(--hw-primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .hw-btn-outline {
+            border: 1px solid var(--hw-border);
+            background: #fff;
+            color: var(--hw-primary);
+        }
+
+        .hw-btn-outline:hover {
+            border-color: var(--hw-primary);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU BUTTON
+        ========================================================= */
+
+        .hw-menu {
+            width: 44px;
+            height: 44px;
+
+            display: none;
+
+            place-items: center;
+
+            border-radius: 11px;
+
+            background: #fff;
+
+            border: 1px solid var(--hw-border);
+
+            color: var(--hw-primary);
+
+            font-size: 20px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hw-hero {
+            position: relative;
+
+            min-height: 670px;
+
+            display: flex;
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(4,45,61,.91) 0%,
+                    rgba(4,45,61,.78) 43%,
+                    rgba(4,45,61,.22) 78%,
+                    rgba(4,45,61,.03) 100%
+                ),
+                linear-gradient(
+                    180deg,
+                    #0b526a,
+                    #0d6e7c
+                );
+        }
+
+        .hw-hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            right: -220px;
+            bottom: -250px;
+        }
+
+        /*
+         * Replace this background with an official/licensed
+         * Healthway hospital image when implementing the final site.
+         */
+        .hw-hero-bg {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(4,48,65,.5),
+                    rgba(13,110,124,.08)
+                );
+
+            opacity: .85;
+        }
+
+        .hw-hero-inner {
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, .9fr)
+                minmax(0, 1.1fr);
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+        .hw-hero-content {
+            max-width: 650px;
+
+            color: #fff;
+        }
+
+        .hw-hero-label {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 7px 11px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            border:
+                1px solid rgba(255,255,255,.18);
+
+            color:
+                rgba(255,255,255,.85);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .hw-hero-label span {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: #79d0c5;
+        }
+
+        .hw-hero h1 {
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(43px, 5vw, 70px);
+
+            line-height: 1.03;
+
+            letter-spacing: -3px;
+        }
+
+        .hw-hero h1 span {
+            color: #8dd8d0;
+        }
+
+        .hw-hero-description {
+            max-width: 600px;
+
+            margin-top: 22px;
+
+            color:
+                rgba(255,255,255,.76);
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+        .hw-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+        .hw-hero .hw-btn-primary {
+            background: #fff;
+            color: var(--hw-primary);
+        }
+
+        .hw-hero .hw-btn-primary:hover {
+            background: #eef8f8;
+        }
+
+        .hw-hero .hw-btn-outline {
+            border:
+                1px solid rgba(255,255,255,.25);
+
+            background:
+                rgba(255,255,255,.07);
+
+            color: #fff;
+        }
+
+
+        /* =========================================================
+           HERO QUICK INFO
+        ========================================================= */
+
+        .hw-hero-info {
+            margin-top: 32px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 24px;
+        }
+
+        .hw-hero-info-item {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .hw-hero-info-icon {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            border:
+                1px solid rgba(255,255,255,.13);
+
+            font-size: 13px;
+        }
+
+        .hw-hero-info strong {
+            display: block;
+
+            font-size: 11px;
+
+            color: #fff;
+        }
+
+        .hw-hero-info span {
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 10px;
+
+            color:
+                rgba(255,255,255,.60);
+        }
+
+
+        /* =========================================================
+           HERO VISUAL
+        ========================================================= */
+
+        .hw-hero-visual {
+            position: relative;
+
+            min-height: 500px;
+        }
+
+        .hw-hero-orb {
+            position: absolute;
+
+            width: 390px;
+            height: 390px;
+
+            border-radius: 50%;
+
+            right: 5%;
+            top: 6%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    rgba(255,255,255,.20),
+                    rgba(255,255,255,.03) 58%,
+                    transparent 70%
+                );
+
+            border:
+                1px solid rgba(255,255,255,.10);
+        }
+
+        .hw-care-card {
+            position: absolute;
+
+            background:
+                rgba(255,255,255,.96);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.22);
+
+            border:
+                1px solid rgba(255,255,255,.6);
+
+            overflow: hidden;
+        }
+
+        .hw-care-card-main {
+            width: 450px;
+
+            right: 3%;
+            top: 10%;
+
+            transform:
+                rotate(2deg);
+        }
+
+        .hw-care-card-image {
+            height: 250px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d7eeee,
+                    #eef7f7
+                );
+
+            position: relative;
+        }
+
+        .hw-care-card-image::before {
+            content:
+                "HEALTHWAY";
+
+            position: absolute;
+
+            left: 25px;
+            top: 25px;
+
+            padding: 8px 10px;
+
+            border-radius: 7px;
+
+            background:
+                rgba(255,255,255,.85);
+
+            color:
+                var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-care-card-body {
+            padding: 20px;
+        }
+
+        .hw-care-card-body small {
+            color: var(--hw-teal);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-care-card-body h3 {
+            margin-top: 5px;
+
+            color: var(--hw-dark);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 21px;
+        }
+
+        .hw-care-card-body p {
+            margin-top: 7px;
+
+            color: var(--hw-muted);
+
+            font-size: 11px;
+        }
+
+        .hw-care-card-small {
+            width: 230px;
+
+            left: 3%;
+            bottom: 7%;
+
+            padding: 18px;
+
+            transform:
+                rotate(-3deg);
+        }
+
+        .hw-care-card-small strong {
+            display: block;
+
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 25px;
+        }
+
+        .hw-care-card-small span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--hw-muted);
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           QUICK ACTIONS
+        ========================================================= */
+
+        .hw-quick-actions {
+            position: relative;
+
+            z-index: 5;
+
+            margin-top: -40px;
+        }
+
+        .hw-quick-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            background: #fff;
+
+            border:
+                1px solid var(--hw-border);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 18px 50px rgba(12,56,74,.10);
+
+            overflow: hidden;
+        }
+
+        .hw-quick-item {
+            padding: 23px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            border-right:
+                1px solid var(--hw-border);
+
+            transition: .2s ease;
+        }
+
+        .hw-quick-item:last-child {
+            border-right: 0;
+        }
+
+        .hw-quick-item:hover {
+            background:
+                var(--hw-primary-soft);
+        }
+
+        .hw-quick-icon {
+            width: 42px;
+            height: 42px;
+
+            flex: 0 0 42px;
+
+            border-radius: 11px;
+
+            display: grid;
+            place-items: center;
+
+            background:
+                var(--hw-teal-soft);
+
+            color:
+                var(--hw-teal);
+
+            font-weight: 800;
+
+            font-size: 12px;
+        }
+
+        .hw-quick-item strong {
+            display: block;
+
+            color: var(--hw-primary);
+
+            font-size: 13px;
+        }
+
+        .hw-quick-item span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--hw-muted);
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           COMMON SECTION
+        ========================================================= */
+
+        .hw-section {
+            padding: 105px 0;
+        }
+
+        .hw-section-soft {
+            background:
+                var(--hw-offwhite);
+        }
+
+        .hw-heading {
+            max-width: 700px;
+
+            margin-bottom: 45px;
+        }
+
+        .hw-heading.center {
+            text-align: center;
+
+            margin-inline: auto;
+        }
+
+        .hw-eyebrow {
+            color: var(--hw-teal);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+        .hw-heading h2 {
+            margin-top: 10px;
+
+            color: var(--hw-dark);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(31px, 4vw, 48px);
+
+            line-height: 1.12;
+
+            letter-spacing: -1.8px;
+        }
+
+        .hw-heading p {
+            margin-top: 15px;
+
+            color: var(--hw-muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .hw-intro-grid {
+            display: grid;
+
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 75px;
+
+            align-items: center;
+        }
+
+        .hw-intro-visual {
+            position: relative;
+
+            min-height: 480px;
+
+            border-radius: 25px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #dceff0,
+                    #eff7f7
+                );
+        }
+
+        .hw-intro-shape {
+            position: absolute;
+
+            width: 340px;
+            height: 340px;
+
+            border-radius: 50%;
+
+            right: -90px;
+            top: -90px;
+
+            border:
+                1px solid rgba(7,91,120,.12);
+        }
+
+        .hw-intro-panel {
+            position: absolute;
+
+            left: 9%;
+            bottom: 9%;
+
+            width: 72%;
+
+            padding: 25px;
+
+            background:
+                rgba(255,255,255,.93);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 25px 60px rgba(14,67,82,.12);
+        }
+
+        .hw-intro-panel small {
+            color: var(--hw-teal);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-intro-panel h3 {
+            margin-top: 7px;
+
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 22px;
+        }
+
+        .hw-intro-panel p {
+            margin-top: 8px;
+
+            color: var(--hw-muted);
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        .hw-intro-content p {
+            color: var(--hw-muted);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+        .hw-intro-content p + p {
+            margin-top: 15px;
+        }
+
+        .hw-feature-list {
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .hw-feature {
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+        }
+
+        .hw-feature-icon {
+            width: 27px;
+            height: 27px;
+
+            flex: 0 0 27px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 8px;
+
+            background:
+                var(--hw-teal-soft);
+
+            color: var(--hw-teal);
+
+            font-size: 11px;
+
+            font-weight: 800;
+        }
+
+        .hw-feature strong {
+            display: block;
+
+            color: var(--hw-primary);
+
+            font-size: 12px;
+        }
+
+        .hw-feature span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--hw-muted);
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           CENTERS OF EXCELLENCE
+        ========================================================= */
+
+        .hw-centers-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 17px;
+        }
+
+        .hw-center-card {
+            min-height: 310px;
+
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 25px;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #d9eeee,
+                    #f1f8f8
+                );
+
+            border:
+                1px solid var(--hw-border);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .hw-center-card:hover {
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                var(--hw-shadow);
+        }
+
+        .hw-center-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -60px;
+            top: -60px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(22,141,141,.09);
+        }
+
+        .hw-center-number {
+            position: absolute;
+
+            top: 22px;
+            left: 22px;
+
+            color:
+                rgba(7,91,120,.35);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-center-card small {
+            color: var(--hw-teal);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-center-card h3 {
+            margin-top: 6px;
+
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 22px;
+        }
+
+        .hw-center-card p {
+            margin-top: 7px;
+
+            color: var(--hw-muted);
+
+            font-size: 11px;
+
+            line-height: 1.65;
+        }
+
+        .hw-center-link {
+            margin-top: 15px;
+
+            color: var(--hw-teal);
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .hw-services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .hw-service-card {
+            padding: 25px;
+
+            background: #fff;
+
+            border:
+                1px solid var(--hw-border);
+
+            border-radius: 17px;
+
+            transition: .25s ease;
+        }
+
+        .hw-service-card:hover {
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--hw-shadow);
+
+            border-color:
+                #c8dce1;
+        }
+
+        .hw-service-icon {
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background:
+                var(--hw-primary-soft);
+
+            color:
+                var(--hw-primary);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            margin-bottom: 18px;
+        }
+
+        .hw-service-card h3 {
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 16px;
+        }
+
+        .hw-service-card p {
+            margin-top: 7px;
+
+            color: var(--hw-muted);
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        .hw-service-card a {
+            display: inline-flex;
+
+            margin-top: 16px;
+
+            color: var(--hw-teal);
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           BOOK APPOINTMENT
+        ========================================================= */
+
+        .hw-booking {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--hw-primary-dark),
+                    var(--hw-primary)
+                );
+
+            color: #fff;
+        }
+
+        .hw-booking-grid {
+            display: grid;
+
+            grid-template-columns:
+                .85fr 1.15fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .hw-booking-copy .hw-eyebrow {
+            color: #91d7d0;
+        }
+
+        .hw-booking-copy h2 {
+            margin-top: 10px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(32px, 4vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -1.7px;
+        }
+
+        .hw-booking-copy p {
+            margin-top: 15px;
+
+            color:
+                rgba(255,255,255,.68);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .hw-booking-points {
+            margin-top: 25px;
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+        .hw-booking-point {
+            display: flex;
+
+            gap: 9px;
+
+            align-items: center;
+
+            color:
+                rgba(255,255,255,.78);
+
+            font-size: 11px;
+        }
+
+        .hw-booking-point b {
+            width: 20px;
+            height: 20px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 6px;
+
+            background:
+                rgba(255,255,255,.10);
+
+            color: #91d7d0;
+
+            font-size: 9px;
+        }
+
+        .hw-booking-card {
+            background: #fff;
+
+            border-radius: 20px;
+
+            padding: 27px;
+
+            color: var(--hw-text);
+
+            box-shadow:
+                0 30px 70px rgba(0,0,0,.18);
+        }
+
+        .hw-booking-card h3 {
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 20px;
+        }
+
+        .hw-booking-card p {
+            margin-top: 4px;
+
+            color: var(--hw-muted);
+
+            font-size: 10px;
+        }
+
+        .hw-form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .hw-form-group label {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--hw-text);
+
+            font-size: 9px;
+
+            font-weight: 700;
+        }
+
+        .hw-form-group input,
+        .hw-form-group select {
+            width: 100%;
+
+            min-height: 43px;
+
+            padding: 0 12px;
+
+            border:
+                1px solid var(--hw-border);
+
+            border-radius: 9px;
+
+            outline: none;
+
+            background: #fff;
+
+            color: var(--hw-text);
+
+            font-size: 11px;
+        }
+
+        .hw-form-group input:focus,
+        .hw-form-group select:focus {
+            border-color: var(--hw-teal);
+
+            box-shadow:
+                0 0 0 3px rgba(22,141,141,.08);
+        }
+
+        .hw-form-full {
+            grid-column: 1 / -1;
+        }
+
+        .hw-booking-card .hw-btn {
+            width: 100%;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================================================
+           TESTIMONIALS
+        ========================================================= */
+
+        .hw-testimonials {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 17px;
+        }
+
+        .hw-testimonial {
+            padding: 25px;
+
+            background: #fff;
+
+            border:
+                1px solid var(--hw-border);
+
+            border-radius: 17px;
+        }
+
+        .hw-stars {
+            color: #e1a84b;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+        .hw-testimonial p {
+            margin-top: 15px;
+
+            color: var(--hw-muted);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+        .hw-testimonial-author {
+            margin-top: 20px;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid var(--hw-border);
+        }
+
+        .hw-testimonial-author strong {
+            display: block;
+
+            color: var(--hw-primary);
+
+            font-size: 11px;
+        }
+
+        .hw-testimonial-author span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: var(--hw-muted);
+
+            font-size: 9px;
+        }
+
+
+        /* =========================================================
+           NEWS
+        ========================================================= */
+
+        .hw-news-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.25fr .75fr .75fr;
+
+            gap: 17px;
+        }
+
+        .hw-news-card {
+            min-height: 280px;
+
+            position: relative;
+
+            padding: 25px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #dceff0,
+                    #f1f8f8
+                );
+
+            border:
+                1px solid var(--hw-border);
+        }
+
+        .hw-news-card.featured {
+            min-height: 390px;
+        }
+
+        .hw-news-card small {
+            color: var(--hw-teal);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .hw-news-card h3 {
+            margin-top: 7px;
+
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 18px;
+
+            line-height: 1.25;
+        }
+
+        .hw-news-card p {
+            margin-top: 7px;
+
+            color: var(--hw-muted);
+
+            font-size: 10px;
+        }
+
+        .hw-news-date {
+            margin-top: 13px;
+
+            color:
+                #83939a;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================================================
+           PATIENT PORTAL
+        ========================================================= */
+
+        .hw-patient-banner {
+            background:
+                var(--hw-primary-soft);
+
+            border-top:
+                1px solid var(--hw-border);
+
+            border-bottom:
+                1px solid var(--hw-border);
+        }
+
+        .hw-patient-inner {
+            min-height: 170px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .hw-patient-copy h2 {
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 27px;
+
+            letter-spacing: -.8px;
+        }
+
+        .hw-patient-copy p {
+            margin-top: 5px;
+
+            color: var(--hw-muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .hw-contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 50px;
+        }
+
+        .hw-contact-details {
+            display: grid;
+
+            gap: 18px;
+        }
+
+        .hw-contact-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+        }
+
+        .hw-contact-icon {
+            width: 38px;
+            height: 38px;
+
+            flex: 0 0 38px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                var(--hw-teal-soft);
+
+            color:
+                var(--hw-teal);
+
+            font-size: 10px;
+
+            font-weight: 800;
+        }
+
+        .hw-contact-item strong {
+            display: block;
+
+            color: var(--hw-primary);
+
+            font-size: 12px;
+        }
+
+        .hw-contact-item span,
+        .hw-contact-item a {
+            display: block;
+
+            margin-top: 3px;
+
+            color: var(--hw-muted);
+
+            font-size: 11px;
+        }
+
+        .hw-contact-map {
+            min-height: 350px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #dbeff0,
+                    #f3f8f8
+                );
+
+            border:
+                1px solid var(--hw-border);
+
+            display: grid;
+
+            place-items: center;
+
+            color: var(--hw-primary);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .hw-footer {
+            padding: 60px 0 25px;
+
+            background:
+                #082f40;
+
+            color:
+                rgba(255,255,255,.67);
+        }
+
+        .hw-footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr .8fr .8fr .9fr;
+
+            gap: 40px;
+        }
+
+        .hw-footer h3 {
+            margin-bottom: 15px;
+
+            color: #fff;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 13px;
+        }
+
+        .hw-footer p,
+        .hw-footer a {
+            font-size: 10px;
+
+            line-height: 1.9;
+        }
+
+        .hw-footer a:hover {
+            color: #fff;
+        }
+
+        .hw-footer-bottom {
+            margin-top: 45px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(255,255,255,.09);
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================================================
+           MOBILE STICKY ACTIONS
+        ========================================================= */
+
+        .hw-mobile-actions {
+            display: none;
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        .hw-reveal {
+            opacity: 0;
+
+            transform:
+                translateY(22px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+        }
+
+        .hw-reveal.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+        /* =========================================================
+           PROPOSAL NOTICE MODAL
+        ========================================================= */
+
+        .proposal-modal { position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; padding:24px; visibility:hidden; opacity:0; pointer-events:none; transition:opacity .3s ease,visibility .3s ease; }
+        .proposal-modal.is-visible { visibility:visible; opacity:1; pointer-events:auto; }
+        .proposal-modal-backdrop { position:absolute; inset:0; background:rgba(10,20,18,.68); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); }
+        .proposal-modal-card { position:relative; z-index:2; width:min(680px,100%); max-height:calc(100vh - 48px); overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; scrollbar-color:transparent transparent; background:#fff; border:1px solid rgba(23,74,63,.10); border-radius:24px; box-shadow:0 30px 80px rgba(0,0,0,.22),0 8px 30px rgba(0,0,0,.08); transform:translateY(24px) scale(.97); transition:transform .35s cubic-bezier(.2,.8,.2,1),scrollbar-color .25s ease; }
+        .proposal-modal-card::-webkit-scrollbar{width:3px}.proposal-modal-card::-webkit-scrollbar-track{background:transparent}.proposal-modal-card::-webkit-scrollbar-thumb{background:transparent;border-radius:999px;transition:background .25s ease}.proposal-modal-card:hover{scrollbar-color:rgba(30,111,92,.35) transparent}.proposal-modal-card:hover::-webkit-scrollbar-thumb{background:rgba(30,111,92,.35)}.proposal-modal-card.is-scrolling{scrollbar-color:rgba(30,111,92,.65) transparent}.proposal-modal-card.is-scrolling::-webkit-scrollbar-thumb{background:rgba(30,111,92,.65)}.proposal-modal-card::-webkit-scrollbar-thumb:hover{background:rgba(30,111,92,.85)}
+        .proposal-modal.is-visible .proposal-modal-card{transform:translateY(0) scale(1)}
+        .proposal-modal-close{position:absolute;top:18px;right:18px;z-index:10;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#f3f7f5;color:#183c34;cursor:pointer;transition:background .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease}.proposal-modal-close i{font-size:22px;line-height:1}.proposal-modal-close:hover{background:#183c34;color:#fff;transform:rotate(90deg);box-shadow:0 8px 20px rgba(24,60,52,.18)}
+        .proposal-modal-icon{position:relative;width:72px;height:72px;margin:38px 38px 20px;display:flex;align-items:center;justify-content:center;border-radius:20px;background:linear-gradient(145deg,#eaf7f3,#dff0eb);color:#237763;font-size:32px;overflow:hidden;box-shadow:0 12px 30px rgba(35,119,99,.10)}.proposal-modal-icon>i{position:relative;z-index:2;font-size:32px}.proposal-modal-icon-ring{position:absolute;width:92px;height:92px;right:-34px;top:-34px;border:1px solid rgba(35,119,99,.14);border-radius:50%}
+        .proposal-modal-content{padding:0 38px 34px}.proposal-modal-label{display:inline-flex;align-items:center;gap:8px;margin-bottom:10px;color:#237763;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.proposal-label-icon{width:23px;height:23px;display:inline-flex;align-items:center;justify-content:center;border-radius:7px;background:#eaf5f1;color:#237763}.proposal-label-icon i{font-size:13px}.proposal-modal-content h2{margin:0 45px 13px 0;color:#173b33;font-family:"Manrope",sans-serif;font-size:clamp(25px,4vw,34px);line-height:1.15;letter-spacing:-.025em}.proposal-modal-description{margin:0;max-width:590px;color:#64736f;font-size:15px;line-height:1.75}
+        .proposal-modal-note{display:flex;gap:15px;margin-top:25px;padding:18px;border:1px solid #dcebe6;border-radius:16px;background:#f5faf8;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}.proposal-modal-note:hover{border-color:#c9e1d9;transform:translateY(-1px);box-shadow:0 8px 22px rgba(35,119,99,.06)}.proposal-note-icon{flex:0 0 42px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#fff;color:#237763;box-shadow:0 4px 12px rgba(20,80,65,.08)}.proposal-note-icon i{font-size:20px}.proposal-note-content{min-width:0}.proposal-modal-note strong{display:block;margin-bottom:5px;color:#193e35;font-size:14px;font-weight:750}.proposal-modal-note p{margin:0;color:#65736f;font-size:13px;line-height:1.65}
+        .proposal-modal-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.proposal-feature{min-height:66px;display:flex;align-items:center;gap:11px;padding:11px 13px;border:1px solid #e8eeec;border-radius:13px;background:#fff;transition:border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease}.proposal-feature:hover{border-color:#d2e6df;background:#fbfdfc;transform:translateY(-2px);box-shadow:0 8px 20px rgba(35,119,99,.06)}.proposal-feature-icon{width:38px;height:38px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#eaf5f1;color:#237763;transition:background .2s ease,color .2s ease,transform .2s ease}.proposal-feature:hover .proposal-feature-icon{background:#237763;color:#fff;transform:scale(1.05)}.proposal-feature-icon i{font-size:19px;line-height:1}.proposal-feature-content{min-width:0;display:flex;flex-direction:column;gap:2px}.proposal-feature-content strong{color:#294c43;font-size:12px;font-weight:750;line-height:1.3}.proposal-feature-content span{color:#87948f;font-size:10px;line-height:1.4}
+        .proposal-modal-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:25px;padding-top:20px;border-top:1px solid #edf1ef}.proposal-modal-status{display:flex;align-items:center;gap:7px;color:#7a8884;font-size:11px;font-weight:600}.proposal-modal-status i{width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#eaf5f1;color:#237763;font-size:14px}.proposal-modal-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border:0;border-radius:10px;background:#1e6f5c;color:#fff;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}.proposal-modal-button>i:first-child{font-size:17px}.proposal-button-arrow{font-size:18px;transition:transform .2s ease}.proposal-modal-button:hover{background:#155645;transform:translateY(-2px);box-shadow:0 8px 20px rgba(30,111,92,.20)}.proposal-modal-button:hover .proposal-button-arrow{transform:translateX(4px)}body.proposal-modal-open{overflow:hidden}
+        @media(max-width:640px){.proposal-modal{padding:14px;align-items:flex-end}.proposal-modal-card{width:100%;max-height:calc(100vh - 28px);border-radius:22px}.proposal-modal-close{top:13px;right:13px;width:36px;height:36px}.proposal-modal-close i{font-size:20px}.proposal-modal-icon{width:56px;height:56px;margin:25px 22px 17px;border-radius:16px;font-size:25px}.proposal-modal-icon>i{font-size:26px}.proposal-modal-content{padding:0 22px 23px}.proposal-modal-label{font-size:9px}.proposal-label-icon{width:21px;height:21px}.proposal-modal-content h2{margin-right:30px;font-size:25px}.proposal-modal-description{font-size:13px;line-height:1.65}.proposal-modal-note{padding:14px;gap:11px}.proposal-note-icon{flex-basis:34px;width:34px;height:34px;border-radius:9px}.proposal-note-icon i{font-size:17px}.proposal-modal-note strong{font-size:13px}.proposal-modal-note p{font-size:12px}.proposal-modal-features{grid-template-columns:1fr}.proposal-feature{min-height:61px}.proposal-feature-icon{width:36px;height:36px;flex-basis:36px}.proposal-feature-icon i{font-size:18px}.proposal-modal-footer{align-items:stretch;flex-direction:column;gap:14px}.proposal-modal-button{width:100%}}
+
+        /* =========================================================
+           RESPONSIVE 1100
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .hw-nav {
+                gap: 14px;
+            }
+
+            .hw-nav > a,
+            .hw-nav-dropdown > button {
+                font-size: 11px;
+            }
+
+            .hw-header-actions .hw-btn-outline {
+                display: none;
+            }
+
+            .hw-hero-inner {
+                gap: 35px;
+            }
+
+            .hw-hero-visual {
+                transform:
+                    scale(.9);
+            }
+
+            .hw-centers-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hw-services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hw-news-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .hw-news-card.featured {
+                grid-column:
+                    1 / -1;
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE 850
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .hw-container {
+                width:
+                    calc(100% - 32px);
+            }
+
+            .hw-topbar {
+                display: none;
+            }
+
+            .hw-header-inner {
+                min-height: 70px;
+            }
+
+            .hw-nav,
+            .hw-header-actions .hw-btn-primary {
+                display: none;
+            }
+
+            .hw-menu {
+                display: grid;
+            }
+
+            .hw-header.menu-open .hw-nav {
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+                right: 0;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 0;
+
+                padding: 10px 16px 18px;
+
+                background: #fff;
+
+                border-bottom:
+                    1px solid var(--hw-border);
+
+                box-shadow:
+                    0 20px 40px rgba(8,44,60,.10);
+            }
+
+            .hw-header.menu-open .hw-nav > a,
+            .hw-header.menu-open .hw-nav-dropdown > button {
+                width: 100%;
+
+                padding: 13px 10px;
+
+                text-align: left;
+
+                border-radius: 8px;
+            }
+
+            .hw-header.menu-open .hw-nav > a:hover,
+            .hw-header.menu-open .hw-nav-dropdown > button:hover {
+                background:
+                    var(--hw-primary-soft);
+            }
+
+            .hw-header.menu-open .hw-dropdown {
+                position: static;
+
+                display: none;
+
+                box-shadow: none;
+
+                border: 0;
+
+                padding-left: 12px;
+
+                opacity: 1;
+
+                visibility: visible;
+
+                transform: none;
+            }
+
+            .hw-header.menu-open
+            .hw-nav-dropdown.open
+            .hw-dropdown {
+                display: block;
+            }
+
+            .hw-header.menu-open
+            .hw-nav > a::after,
+            .hw-header.menu-open
+            .hw-nav-dropdown > button::after {
+                display: none;
+            }
+
+            .hw-hero {
+                min-height: auto;
+
+                padding:
+                    80px 0 90px;
+            }
+
+            .hw-hero-inner {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-hero-content {
+                max-width: 700px;
+            }
+
+            .hw-hero-visual {
+                min-height: 400px;
+
+                transform: none;
+            }
+
+            .hw-hero-orb {
+                width: 330px;
+                height: 330px;
+
+                right: 8%;
+            }
+
+            .hw-care-card-main {
+                width: min(430px, 82vw);
+
+                right: 7%;
+            }
+
+            .hw-care-card-small {
+                left: 4%;
+            }
+
+            .hw-quick-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hw-quick-item:nth-child(2) {
+                border-right: 0;
+            }
+
+            .hw-quick-item:nth-child(-n+2) {
+                border-bottom:
+                    1px solid var(--hw-border);
+            }
+
+            .hw-intro-grid,
+            .hw-booking-grid,
+            .hw-contact-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-intro-visual {
+                min-height: 400px;
+            }
+
+            .hw-patient-inner {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                justify-content: center;
+
+                padding: 35px 0;
+            }
+
+            .hw-footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .hw-mobile-actions {
+                position: fixed;
+
+                display: flex;
+
+                z-index: 1001;
+
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+
+                padding: 5px;
+
+                border-radius: 14px;
+
+                background:
+                    rgba(8,47,64,.94);
+
+                backdrop-filter:
+                    blur(15px);
+
+                box-shadow:
+                    0 15px 40px rgba(0,0,0,.20);
+            }
+
+            .hw-mobile-actions a {
+                flex: 1;
+
+                min-height: 43px;
+
+                display: grid;
+
+                place-items: center;
+
+                color: #fff;
+
+                font-size: 11px;
+
+                font-weight: 800;
+
+                border-radius: 9px;
+            }
+
+            .hw-mobile-actions a:last-child {
+                background:
+                    var(--hw-teal);
+            }
+
+        }
+
+
+        /* =========================================================
+           RESPONSIVE 600
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .hw-section {
+                padding: 75px 0;
+            }
+
+            .hw-logo-text span {
+                display: none;
+            }
+
+            .hw-logo-text strong {
+                font-size: 13px;
+            }
+
+            .hw-logo-mark {
+                width: 41px;
+                height: 41px;
+            }
+
+            .hw-hero {
+                padding:
+                    60px 0 70px;
+            }
+
+            .hw-hero h1 {
+                font-size: 43px;
+
+                letter-spacing:
+                    -2px;
+            }
+
+            .hw-hero-description {
+                font-size: 14px;
+            }
+
+            .hw-hero-actions {
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-hero-actions .hw-btn {
+                width: 100%;
+            }
+
+            .hw-hero-info {
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 15px;
+            }
+
+            .hw-hero-visual {
+                min-height: 330px;
+            }
+
+            .hw-hero-orb {
+                width: 250px;
+                height: 250px;
+
+                right: 0;
+            }
+
+            .hw-care-card-main {
+                width: 82%;
+
+                right: 0;
+
+                top: 7%;
+            }
+
+            .hw-care-card-image {
+                height: 170px;
+            }
+
+            .hw-care-card-small {
+                width: 175px;
+
+                left: 0;
+
+                bottom: 4%;
+            }
+
+            .hw-quick-grid {
+                display: flex;
+
+                overflow-x: auto;
+
+                scroll-snap-type:
+                    x mandatory;
+
+                margin-right: -16px;
+
+                padding-right: 16px;
+
+                box-shadow: none;
+
+                border: 0;
+
+                background: transparent;
+            }
+
+            .hw-quick-item {
+                min-width: 78%;
+
+                scroll-snap-align: start;
+
+                border:
+                    1px solid var(--hw-border) !important;
+
+                border-radius: 14px;
+
+                background: #fff;
+
+                box-shadow:
+                    0 10px 25px rgba(8,50,65,.06);
+            }
+
+            .hw-heading h2 {
+                font-size: 32px;
+            }
+
+            .hw-feature-list {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-centers-grid {
+                display: flex;
+
+                overflow-x: auto;
+
+                scroll-snap-type:
+                    x mandatory;
+
+                gap: 12px;
+
+                margin-right: -16px;
+
+                padding-right: 16px;
+
+                padding-bottom: 8px;
+            }
+
+            .hw-center-card {
+                min-width: 78%;
+
+                scroll-snap-align: start;
+            }
+
+            .hw-services-grid {
+                display: flex;
+
+                overflow-x: auto;
+
+                scroll-snap-type:
+                    x mandatory;
+
+                margin-right: -16px;
+
+                padding-right: 16px;
+
+                padding-bottom: 8px;
+            }
+
+            .hw-service-card {
+                min-width: 78%;
+
+                scroll-snap-align: start;
+            }
+
+            .hw-form-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-form-full {
+                grid-column:
+                    auto;
+            }
+
+            .hw-testimonials {
+                display: flex;
+
+                overflow-x: auto;
+
+                scroll-snap-type:
+                    x mandatory;
+
+                margin-right: -16px;
+
+                padding-right: 16px;
+
+                padding-bottom: 8px;
+            }
+
+            .hw-testimonial {
+                min-width: 82%;
+
+                scroll-snap-align: start;
+            }
+
+            .hw-news-grid {
+                display: flex;
+
+                overflow-x: auto;
+
+                scroll-snap-type:
+                    x mandatory;
+
+                margin-right: -16px;
+
+                padding-right: 16px;
+            }
+
+            .hw-news-card,
+            .hw-news-card.featured {
+                min-width: 82%;
+
+                min-height: 310px;
+
+                scroll-snap-align: start;
+            }
+
+            .hw-contact-map {
+                min-height: 250px;
+            }
+
+            .hw-footer-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .hw-footer-bottom {
+                flex-direction: column;
+
+                padding-bottom: 60px;
+            }
+
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    .01ms !important;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         TOP BAR
+    ========================================================== -->
+
+    <div class="hw-topbar">
+
+        <div class="hw-container hw-topbar-inner">
+
+            <div class="hw-topbar-left">
+
+                <a href="tel:+63277774673">
+                    (02) 7777-4673
+                </a>
+
+                <a href="tel:+639174662273">
+                    0917-466-2273
+                </a>
+
+            </div>
+
+            <div class="hw-topbar-right">
+
+                <a href="#contact">
+                    Contact Us
+                </a>
+
+                <a href="#patient-portal">
+                    Patient Portal
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="hw-header" id="hwHeader">
+
+        <div class="hw-container hw-header-inner">
+
+
+            <a href="#" class="hw-logo">
+
+                <div class="hw-logo-mark">
+                    HW
+                </div>
+
+                <div class="hw-logo-text">
+
+                    <strong>
+                        Healthway Cancer Care
+                    </strong>
+
+                    <span>
+                        Hospital
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <nav class="hw-nav" id="hwNav">
+
+                <a href="#about">
+                    About
+                </a>
+
+
+                <div class="hw-nav-dropdown">
+
+                    <button type="button">
+                        Centers of Excellence
+                        
+                    </button>
+
+                    <div class="hw-dropdown">
+
+                        <a href="#colorectal">
+                            Colorectal
+                        </a>
+
+                        <a href="#centers">
+                            Head & Neck
+                        </a>
+
+                        <a href="#centers">
+                            Lung
+                        </a>
+
+                        <a href="#centers">
+                            Breast
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#doctors">
+                    Find a Doctor
+                </a>
+
+                <a href="#news">
+                    News & Promos
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="hw-header-actions">
+
+                <a
+                    href="healthway-patient-dashboard.html"
+                    class="hw-btn hw-btn-outline"
+                >
+                    Patient Portal
+                </a>
+
+                <a
+                    href="#book"
+                    class="hw-btn hw-btn-primary"
+                >
+                    Book Appointment
+                </a>
+
+                <button
+                    class="hw-menu"
+                    id="hwMenu"
+                    type="button"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <main>
+
+        <section class="hw-hero">
+
+            <div class="hw-hero-bg"></div>
+
+            <div class="hw-container hw-hero-inner">
+
+
+                <div class="hw-hero-content hw-reveal">
+
+                    <div class="hw-hero-label">
+
+                        <span></span>
+
+                        Healthway Cancer Care Hospital
+
+                    </div>
+
+
+                    <h1>
+
+                        Comprehensive care,
+                        <span>beyond cancer.</span>
+
+                    </h1>
+
+
+                    <p class="hw-hero-description">
+
+                        A dedicated cancer hospital providing
+                        integrated care from screening and diagnosis
+                        through treatment, recovery and survivorship —
+                        with the patient at the center of every step.
+
+                    </p>
+
+
+                    <div class="hw-hero-actions">
+
+                        <a
+                            href="#book"
+                            class="hw-btn hw-btn-primary"
+                        >
+                            Book an Appointment →
+                        </a>
+
+                        <a
+                            href="#centers"
+                            class="hw-btn hw-btn-outline"
+                        >
+                            Explore Cancer Care
+                        </a>
+
+                    </div>
+
+
+                    <div class="hw-hero-info">
+
+
+                        <div class="hw-hero-info-item">
+
+                            <div class="hw-hero-info-icon">
+                                24
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Open 24/7
+                                </strong>
+
+                                <span>
+                                    Monday to Sunday
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-hero-info-item">
+
+                            <div class="hw-hero-info-icon">
+                                PH
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Taguig City
+                                </strong>
+
+                                <span>
+                                    Metro Manila
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="hw-hero-visual hw-reveal">
+
+                    <div class="hw-hero-orb"></div>
+
+
+                    <div class="hw-care-card hw-care-card-main">
+
+                        <div class="hw-care-card-image"></div>
+
+                        <div class="hw-care-card-body">
+
+                            <small>
+                                Specialized Cancer Care
+                            </small>
+
+                            <h3>
+                                Whole-person care,
+                                every step of the journey.
+                            </h3>
+
+                            <p>
+                                Integrated services designed around
+                                the needs of every patient.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hw-care-card hw-care-card-small">
+
+                        <strong>
+                            4
+                        </strong>
+
+                        <span>
+                            Centers of Excellence
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUICK ACTIONS
+        ====================================================== -->
+
+        <section class="hw-quick-actions">
+
+            <div class="hw-container">
+
+                <div class="hw-quick-grid">
+
+
+                    <a
+                        href="#book"
+                        class="hw-quick-item"
+                    >
+
+                        <div class="hw-quick-icon">
+                            AP
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Book an Appointment
+                            </strong>
+
+                            <span>
+                                Schedule your visit
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#doctors"
+                        class="hw-quick-item"
+                    >
+
+                        <div class="hw-quick-icon">
+                            DR
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Find a Doctor
+                            </strong>
+
+                            <span>
+                                Meet our specialists
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#services"
+                        class="hw-quick-item"
+                    >
+
+                        <div class="hw-quick-icon">
+                            SV
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Explore Services
+                            </strong>
+
+                            <span>
+                                Discover our care
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="#patient-portal"
+                        class="hw-quick-item"
+                    >
+
+                        <div class="hw-quick-icon">
+                            PT
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Patient Portal
+                            </strong>
+
+                            <span>
+                                Access your records
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
+
+        <section
+            class="hw-section"
+            id="about"
+        >
+
+            <div class="hw-container hw-intro-grid">
+
+
+                <div class="hw-intro-visual hw-reveal">
+
+                    <div class="hw-intro-shape"></div>
+
+                    <div class="hw-intro-panel">
+
+                        <small>
+                            Healthway Cancer Care Hospital
+                        </small>
+
+                        <h3>
+                            Care Beyond Cure
+                        </h3>
+
+                        <p>
+                            A patient-centered approach focused
+                            on medical expertise, comfort,
+                            coordination and the whole person's
+                            well-being.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hw-intro-content hw-reveal">
+
+                    <div class="hw-heading">
+
+                        <div class="hw-eyebrow">
+                            About Healthway Cancer Care Hospital
+                        </div>
+
+                        <h2>
+                            A dedicated destination
+                            for cancer care.
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Healthway Cancer Care Hospital is located
+                        in Taguig City, Metro Manila and is described
+                        by Healthway as the Philippines' first
+                        comprehensive and dedicated cancer hospital.
+                    </p>
+
+                    <p>
+                        The hospital provides a spectrum of
+                        cancer services ranging from screening
+                        and diagnosis to treatment and
+                        post-cancer care, with an emphasis on
+                        an integrated patient experience.
+                    </p>
+
+
+                    <div class="hw-feature-list">
+
+
+                        <div class="hw-feature">
+
+                            <div class="hw-feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Integrated Care
+                                </strong>
+
+                                <span>
+                                    Coordinated services across
+                                    the patient journey.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-feature">
+
+                            <div class="hw-feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Advanced Technology
+                                </strong>
+
+                                <span>
+                                    Sophisticated imaging and
+                                    treatment capabilities.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-feature">
+
+                            <div class="hw-feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Specialist Teams
+                                </strong>
+
+                                <span>
+                                    Multidisciplinary expertise
+                                    across cancer care.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-feature">
+
+                            <div class="hw-feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Patient-Centered
+                                </strong>
+
+                                <span>
+                                    Care designed around the
+                                    whole person.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CENTERS OF EXCELLENCE
+        ====================================================== -->
+
+        <section
+            class="hw-section hw-section-soft"
+            id="centers"
+        >
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading center hw-reveal">
+
+                    <div class="hw-eyebrow">
+                        Centers of Excellence
+                    </div>
+
+                    <h2>
+                        Specialized expertise,
+                        coordinated care.
+                    </h2>
+
+                    <p>
+                        Dedicated multidisciplinary teams bring
+                        together specialists and treatment options
+                        for different cancer care needs.
+                    </p>
+
+                </div>
+
+
+                <div class="hw-centers-grid">
+
+
+                    <article
+                        class="hw-center-card hw-reveal"
+                    >
+
+                        <div class="hw-center-number">
+                            01
+                        </div>
+
+                        <small>
+                            Center of Excellence
+                        </small>
+
+                        <h3>
+                            Head & Neck
+                        </h3>
+
+                        <p>
+                            Personalized treatment planning
+                            combining diagnostics, surgery,
+                            medical treatment, radiation and
+                            supportive care.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="hw-center-link"
+                        >
+                            Read More →
+                        </a>
+
+                    </article>
+
+
+                    <article
+                        class="hw-center-card hw-reveal"
+                    >
+
+                        <div class="hw-center-number">
+                            02
+                        </div>
+
+                        <small>
+                            Center of Excellence
+                        </small>
+
+                        <h3>
+                            Lung
+                        </h3>
+
+                        <p>
+                            Specialist-led lung cancer care
+                            supported by screening, diagnostics,
+                            treatment and supportive programs.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="hw-center-link"
+                        >
+                            Read More →
+                        </a>
+
+                    </article>
+
+
+                    <article
+                        class="hw-center-card hw-reveal"
+                        id="colorectal"
+                    >
+
+                        <div class="hw-center-number">
+                            03
+                        </div>
+
+                        <small>
+                            Center of Excellence
+                        </small>
+
+                        <h3>
+                            Colorectal
+                        </h3>
+
+                        <p>
+                            Screening and diagnostic services
+                            including FIT and colonoscopy,
+                            together with multidisciplinary
+                            colorectal cancer treatment.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="hw-center-link"
+                        >
+                            Read More →
+                        </a>
+
+                    </article>
+
+
+                    <article
+                        class="hw-center-card hw-reveal"
+                    >
+
+                        <div class="hw-center-number">
+                            04
+                        </div>
+
+                        <small>
+                            Center of Excellence
+                        </small>
+
+                        <h3>
+                            Breast
+                        </h3>
+
+                        <p>
+                            Breast health services covering
+                            screening, early detection,
+                            diagnostics, treatment and supportive
+                            care.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="hw-center-link"
+                        >
+                            Read More →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SERVICES
+        ====================================================== -->
+
+        <section
+            class="hw-section"
+            id="services"
+        >
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading center hw-reveal">
+
+                    <div class="hw-eyebrow">
+                        Our Services
+                    </div>
+
+                    <h2>
+                        Comprehensive healthcare
+                        under one roof.
+                    </h2>
+
+                    <p>
+                        Explore specialized units and services
+                        supporting diagnosis, treatment,
+                        prevention and quality of life.
+                    </p>
+
+                </div>
+
+
+                <div class="hw-services-grid">
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            CV
+                        </div>
+
+                        <h3>
+                            Cardiovascular Unit
+                        </h3>
+
+                        <p>
+                            Heart care and cardiac diagnostic
+                            services.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            CH
+                        </div>
+
+                        <h3>
+                            Chemotherapy
+                        </h3>
+
+                        <p>
+                            Cancer treatment designed around
+                            individual patient needs.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            DH
+                        </div>
+
+                        <h3>
+                            Digestive Health Clinic
+                        </h3>
+
+                        <p>
+                            Specialized digestive and colorectal
+                            care.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            LB
+                        </div>
+
+                        <h3>
+                            Laboratory Department
+                        </h3>
+
+                        <p>
+                            Diagnostic testing and laboratory
+                            services.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            MS
+                        </div>
+
+                        <h3>
+                            Multi-Specialty Clinics
+                        </h3>
+
+                        <p>
+                            Access to a range of specialist
+                            healthcare professionals.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            PT
+                        </div>
+
+                        <h3>
+                            Nuclear Medicine / PET CT
+                        </h3>
+
+                        <p>
+                            Advanced imaging and diagnostic
+                            services.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            PO
+                        </div>
+
+                        <h3>
+                            Pulmonary Unit
+                        </h3>
+
+                        <p>
+                            Comprehensive respiratory and
+                            pulmonary care.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            QL
+                        </div>
+
+                        <h3>
+                            Quality of Life
+                        </h3>
+
+                        <p>
+                            Supportive care focused on comfort
+                            and wellbeing.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            RO
+                        </div>
+
+                        <h3>
+                            Radiation Oncology
+                        </h3>
+
+                        <p>
+                            Targeted radiation therapy for
+                            cancer treatment.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            RX
+                        </div>
+
+                        <h3>
+                            Radiology
+                        </h3>
+
+                        <p>
+                            Imaging services supporting
+                            accurate diagnosis.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            WH
+                        </div>
+
+                        <h3>
+                            Women's Health Center
+                        </h3>
+
+                        <p>
+                            Dedicated services supporting
+                            women's health.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <article class="hw-service-card hw-reveal">
+
+                        <div class="hw-service-icon">
+                            HC
+                        </div>
+
+                        <h3>
+                            HealthCheQ Unit
+                        </h3>
+
+                        <p>
+                            Programs supporting prevention,
+                            screening and healthier living.
+                        </p>
+
+                        <a href="#">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             BOOK APPOINTMENT
+        ====================================================== -->
+
+        <section
+            class="hw-section hw-booking"
+            id="book"
+        >
+
+            <div class="hw-container hw-booking-grid">
+
+
+                <div class="hw-booking-copy hw-reveal">
+
+                    <div class="hw-eyebrow">
+                        Book An Appointment
+                    </div>
+
+                    <h2>
+                        Take the next step
+                        in your care.
+                    </h2>
+
+                    <p>
+                        Connect with the appropriate healthcare
+                        service or specialist and schedule your
+                        visit.
+                    </p>
+
+
+                    <div class="hw-booking-points">
+
+                        <div class="hw-booking-point">
+                            <b>✓</b>
+                            Find the right service
+                        </div>
+
+                        <div class="hw-booking-point">
+                            <b>✓</b>
+                            Select your preferred schedule
+                        </div>
+
+                        <div class="hw-booking-point">
+                            <b>✓</b>
+                            Receive appointment confirmation
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hw-booking-card hw-reveal">
+
+                    <h3>
+                        Request an Appointment
+                    </h3>
+
+                    <p>
+                        Please provide your details below.
+                    </p>
+
+
+                    <form id="hwAppointmentForm">
+
+                        <div class="hw-form-grid">
+
+
+                            <div class="hw-form-group">
+
+                                <label>
+                                    First Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="First name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="hw-form-group">
+
+                                <label>
+                                    Last Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    placeholder="Last name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="hw-form-group">
+
+                                <label>
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    placeholder="Email address"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="hw-form-group">
+
+                                <label>
+                                    Mobile Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    placeholder="+63"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div
+                                class="hw-form-group hw-form-full"
+                            >
+
+                                <label>
+                                    Service
+                                </label>
+
+                                <select required>
+
+                                    <option value="">
+                                        Select a service
+                                    </option>
+
+                                    <option>
+                                        Cancer Consultation
+                                    </option>
+
+                                    <option>
+                                        Colorectal Care
+                                    </option>
+
+                                    <option>
+                                        Digestive Health
+                                    </option>
+
+                                    <option>
+                                        Diagnostic Services
+                                    </option>
+
+                                    <option>
+                                        Chemotherapy
+                                    </option>
+
+                                    <option>
+                                        Radiation Oncology
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div
+                                class="hw-form-group hw-form-full"
+                            >
+
+                                <label>
+                                    Preferred Date
+                                </label>
+
+                                <input
+                                    type="date"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="hw-btn hw-btn-primary"
+                        >
+                            Continue Appointment Request →
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DOCTORS
+        ====================================================== -->
+
+        <section
+            class="hw-section hw-section-soft"
+            id="doctors"
+        >
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading center hw-reveal">
+
+                    <div class="hw-eyebrow">
+                        Find A Doctor
+                    </div>
+
+                    <h2>
+                        Connect with the
+                        right specialist.
+                    </h2>
+
+                    <p>
+                        Find healthcare professionals across
+                        Healthway Cancer Care Hospital's
+                        specialized services.
+                    </p>
+
+                </div>
+
+
+                <div
+                    style="
+                        max-width:700px;
+                        margin:auto;
+                        display:grid;
+                        grid-template-columns:1fr 1fr;
+                        gap:10px;
+                    "
+                >
+
+                    <input
+                        id="doctorSearch"
+                        type="text"
+                        placeholder="Search doctor or specialty..."
+                        style="
+                            width:100%;
+                            min-height:48px;
+                            padding:0 14px;
+                            border:1px solid var(--hw-border);
+                            border-radius:10px;
+                            outline:none;
+                            background:#fff;
+                            font-size:12px;
+                        "
+                    >
+
+
+                    <select
+                        id="doctorSpecialty"
+                        style="
+                            width:100%;
+                            min-height:48px;
+                            padding:0 14px;
+                            border:1px solid var(--hw-border);
+                            border-radius:10px;
+                            outline:none;
+                            background:#fff;
+                            font-size:12px;
+                        "
+                    >
+
+                        <option value="">
+                            All Specialties
+                        </option>
+
+                        <option value="colorectal">
+                            Colorectal
+                        </option>
+
+                        <option value="oncology">
+                            Medical Oncology
+                        </option>
+
+                        <option value="radiation">
+                            Radiation Oncology
+                        </option>
+
+                        <option value="breast">
+                            Breast Care
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="doctorResults"
+                    style="
+                        margin-top:25px;
+                        display:grid;
+                        grid-template-columns:repeat(3,1fr);
+                        gap:15px;
+                    "
+                >
+
+                    <div
+                        class="hw-service-card hw-doctor"
+                        data-name="carlos santos"
+                        data-specialty="colorectal"
+                    >
+
+                        <div class="hw-service-icon">
+                            DR
+                        </div>
+
+                        <h3>
+                            Colorectal Specialist
+                        </h3>
+
+                        <p>
+                            Colorectal Surgery & Cancer Care
+                        </p>
+
+                        <a href="#book">
+                            Request Consultation →
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="hw-service-card hw-doctor"
+                        data-name="maria reyes"
+                        data-specialty="oncology"
+                    >
+
+                        <div class="hw-service-icon">
+                            DR
+                        </div>
+
+                        <h3>
+                            Medical Oncology
+                        </h3>
+
+                        <p>
+                            Medical Oncology & Cancer Treatment
+                        </p>
+
+                        <a href="#book">
+                            Request Consultation →
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="hw-service-card hw-doctor"
+                        data-name="ana cruz"
+                        data-specialty="radiation"
+                    >
+
+                        <div class="hw-service-icon">
+                            DR
+                        </div>
+
+                        <h3>
+                            Radiation Oncology
+                        </h3>
+
+                        <p>
+                            Radiation Therapy & Cancer Care
+                        </p>
+
+                        <a href="#book">
+                            Request Consultation →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TESTIMONIALS
+        ====================================================== -->
+
+        <section class="hw-section">
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading center hw-reveal">
+
+                    <div class="hw-eyebrow">
+                        Patient Experiences
+                    </div>
+
+                    <h2>
+                        What patients say
+                        about their experience.
+                    </h2>
+
+                </div>
+
+
+                <div class="hw-testimonials">
+
+
+                    <article class="hw-testimonial hw-reveal">
+
+                        <div class="hw-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            The staff were accommodating and
+                            made sure I was informed about my
+                            checkups and results.
+                        </p>
+
+                        <div class="hw-testimonial-author">
+
+                            <strong>
+                                Patient Experience
+                            </strong>
+
+                            <span>
+                                Healthway Cancer Care Hospital
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="hw-testimonial hw-reveal">
+
+                        <div class="hw-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            The team took the time to explain
+                            the situation clearly and provided
+                            compassionate support throughout
+                            the experience.
+                        </p>
+
+                        <div class="hw-testimonial-author">
+
+                            <strong>
+                                Patient Experience
+                            </strong>
+
+                            <span>
+                                Healthway Cancer Care Hospital
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="hw-testimonial hw-reveal">
+
+                        <div class="hw-stars">
+                            ★★★★★
+                        </div>
+
+                        <p>
+                            A comprehensive environment where
+                            patient wellbeing remains an
+                            important part of the care journey.
+                        </p>
+
+                        <div class="hw-testimonial-author">
+
+                            <strong>
+                                Patient Experience
+                            </strong>
+
+                            <span>
+                                Healthway Cancer Care Hospital
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NEWS
+        ====================================================== -->
+
+        <section
+            class="hw-section hw-section-soft"
+            id="news"
+        >
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading">
+
+                    <div class="hw-eyebrow">
+                        News & Updates
+                    </div>
+
+                    <h2>
+                        Latest from Healthway
+                    </h2>
+
+                    <p>
+                        Explore hospital updates, health information,
+                        promotions and new services.
+                    </p>
+
+                </div>
+
+
+                <div class="hw-news-grid">
+
+
+                    <article
+                        class="hw-news-card featured hw-reveal"
+                    >
+
+                        <small>
+                            Healthway Cancer Care Hospital
+                        </small>
+
+                        <h3>
+                            Digestive Health Clinic
+                            expands specialized care
+                        </h3>
+
+                        <p>
+                            Specialized digestive health programs
+                            supporting colorectal cancer and
+                            liver health.
+                        </p>
+
+                        <div class="hw-news-date">
+                            August 11, 2026
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="hw-news-card hw-reveal"
+                    >
+
+                        <small>
+                            Healthway Cancer Care Hospital
+                        </small>
+
+                        <h3>
+                            MRI Enterography
+                            now available
+                        </h3>
+
+                        <p>
+                            New diagnostic capability supporting
+                            digestive health evaluation.
+                        </p>
+
+                        <div class="hw-news-date">
+                            June 4, 2026
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="hw-news-card hw-reveal"
+                    >
+
+                        <small>
+                            Healthway Cancer Care Hospital
+                        </small>
+
+                        <h3>
+                            Cancer Screening Promo
+                        </h3>
+
+                        <p>
+                            Explore available screening
+                            opportunities and programs.
+                        </p>
+
+                        <div class="hw-news-date">
+                            June 4, 2026
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PATIENT PORTAL
+        ====================================================== -->
+
+        <section
+            class="hw-patient-banner"
+            id="patient-portal"
+        >
+
+            <div class="hw-container hw-patient-inner">
+
+
+                <div class="hw-patient-copy">
+
+                    <h2>
+                        Access your care information.
+                    </h2>
+
+                    <p>
+                        Stay on top of your care through the
+                        Healthway patient portal.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="hw-btn hw-btn-primary"
+                >
+                    Open Patient Portal →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONTACT
+        ====================================================== -->
+
+        <section
+            class="hw-section"
+            id="contact"
+        >
+
+            <div class="hw-container">
+
+
+                <div class="hw-heading">
+
+                    <div class="hw-eyebrow">
+                        Contact Us
+                    </div>
+
+                    <h2>
+                        We're here to help.
+                    </h2>
+
+                    <p>
+                        Connect with Healthway Cancer Care Hospital
+                        for appointments, inquiries and care
+                        information.
+                    </p>
+
+                </div>
+
+
+                <div class="hw-contact-grid">
+
+
+                    <div class="hw-contact-details">
+
+
+                        <div class="hw-contact-item">
+
+                            <div class="hw-contact-icon">
+                                AD
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Hospital Address
+                                </strong>
+
+                                <span>
+                                    South Union Drive,
+                                    Arca South,
+                                    Western Bicutan,
+                                    Taguig City
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-contact-item">
+
+                            <div class="hw-contact-icon">
+                                PH
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Phone
+                                </strong>
+
+                                <a href="tel:+63277774673">
+                                    (02) 7777-4673
+                                </a>
+
+                                <a href="tel:+639174662273">
+                                    0917-466-2273
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-contact-item">
+
+                            <div class="hw-contact-icon">
+                                24
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Hospital Hours
+                                </strong>
+
+                                <span>
+                                    Monday to Sunday · 24/7
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hw-contact-item">
+
+                            <div class="hw-contact-icon">
+                                @
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Email
+                                </strong>
+
+                                <a href="mailto:info@healthway.com.ph">
+                                    info@healthway.com.ph
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="hw-contact-map">
+
+                        Healthway Cancer Care Hospital
+                        <br>
+                        Taguig City, Metro Manila
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="hw-footer">
+
+        <div class="hw-container">
+
+
+            <div class="hw-footer-grid">
+
+
+                <div>
+
+                    <h3>
+                        Healthway Cancer Care Hospital
+                    </h3>
+
+                    <p>
+                        A dedicated cancer hospital providing
+                        comprehensive care from screening through
+                        treatment and survivorship.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Information
+                    </h3>
+
+                    <p>
+                        <a href="#about">
+                            About Us
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#news">
+                            News & Updates
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#contact">
+                            Contact Us
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Services
+                    </h3>
+
+                    <p>
+                        <a href="#services">
+                            Find Care
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#doctors">
+                            Find a Doctor
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="#book">
+                            Book Appointment
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Get In Touch
+                    </h3>
+
+                    <p>
+                        South Union Drive,
+                        Arca South,
+                        Taguig City
+                    </p>
+
+                    <p>
+                        (02) 7777-4673
+                    </p>
+
+                    <p>
+                        0917-466-2273
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="hw-footer-bottom">
+
+                <span>
+                    © 2026 Healthway Cancer Care Hospital
+                </span>
+
+                <span>
+                    Care Beyond Cure
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+    <!-- =========================================================
+         MOBILE ACTION BAR
+    ========================================================== -->
+
+    <div class="hw-mobile-actions">
+
+        <a href="#doctors">
+            Find a Doctor
+        </a>
+
+        <a href="#book">
+            Book Appointment
+        </a>
+
+    </div>
+
+
+    <!-- =========================================================
+        PROPOSAL NOTICE MODAL
+    ========================================================= -->
+    <div class="proposal-modal" id="proposalModal" aria-hidden="true">
+        <div class="proposal-modal-backdrop" data-proposal-close></div>
+        <div class="proposal-modal-card" role="dialog" aria-modal="true" aria-labelledby="proposalModalTitle">
+            <button type="button" class="proposal-modal-close" id="proposalModalClose" aria-label="Close proposal notice"><i class="bx bx-x"></i></button>
+            <div class="proposal-modal-icon"><div class="proposal-modal-icon-ring"></div><i class="bx bx-layer"></i></div>
+            <div class="proposal-modal-content">
+                <span class="proposal-modal-label"><span class="proposal-label-icon"><i class="bx bx-code-alt"></i></span><span>WEBSITE PROPOSAL</span></span>
+                <h2 id="proposalModalTitle">This is a proposed website concept</h2>
+                <p class="proposal-modal-description">This website is a design and development proposal created specifically to demonstrate a possible digital experience for Healthway Cancer Care Hospital.</p>
+                <div class="proposal-modal-note">
+                    <div class="proposal-note-icon"><i class="bx bx-edit-alt"></i></div>
+                    <div class="proposal-note-content"><strong>Everything can be customized</strong><p>The content, images, colors, sections, services, navigation, wording, branding, animations, and functionality can all be changed based on the company's requirements and preferences.</p></div>
+                </div>
+                <div class="proposal-modal-features">
+                    <div class="proposal-feature"><div class="proposal-feature-icon"><i class="bx bx-image"></i></div><div class="proposal-feature-content"><strong>Custom Images</strong><span>Images &amp; media</span></div></div>
+                    <div class="proposal-feature"><div class="proposal-feature-icon"><i class="bx bx-palette"></i></div><div class="proposal-feature-content"><strong>Custom Branding</strong><span>Colors &amp; visual identity</span></div></div>
+                    <div class="proposal-feature"><div class="proposal-feature-icon"><i class="bx bx-layout"></i></div><div class="proposal-feature-content"><strong>Flexible Layout</strong><span>Sections &amp; page structure</span></div></div>
+                    <div class="proposal-feature"><div class="proposal-feature-icon"><i class="bx bx-cog"></i></div><div class="proposal-feature-content"><strong>Custom Features</strong><span>Functions &amp; integrations</span></div></div>
+                </div>
+                <div class="proposal-modal-footer">
+                    <span class="proposal-modal-status"><i class="bx bx-info-circle"></i><span>Proposal concept only</span></span>
+                    <button type="button" class="proposal-modal-button" id="proposalModalContinue"><i class="bx bx-show"></i><span>View Website</span><i class="bx bx-right-arrow-alt proposal-button-arrow"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const hwHeader =
+            document.getElementById("hwHeader");
+
+        const hwMenu =
+            document.getElementById("hwMenu");
+
+
+        hwMenu.addEventListener(
+            "click",
+            function () {
+
+                const opened =
+                    hwHeader.classList.toggle(
+                        "menu-open"
+                    );
+
+                hwMenu.setAttribute(
+                    "aria-expanded",
+                    opened
+                        ? "true"
+                        : "false"
+                );
+
+                hwMenu.textContent =
+                    opened
+                        ? "×"
+                        : "☰";
+
+            }
+        );
+
+
+        /* =====================================================
+           MOBILE DROPDOWN
+        ====================================================== */
+
+        document
+            .querySelectorAll(".hw-nav-dropdown > button")
+            .forEach(function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            window.innerWidth <= 850
+                        ) {
+
+                            button
+                                .parentElement
+                                .classList
+                                .toggle("open");
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           CLOSE MENU AFTER NAV CLICK
+        ====================================================== */
+
+        document
+            .querySelectorAll(".hw-nav a")
+            .forEach(function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        if (
+                            window.innerWidth <= 850
+                        ) {
+
+                            hwHeader
+                                .classList
+                                .remove(
+                                    "menu-open"
+                                );
+
+                            hwMenu.textContent =
+                                "☰";
+
+                            hwMenu.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".hw-reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                function(entries) {
+
+                    entries.forEach(
+                        function(entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
+
+                                revealObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: .08
+                }
+
+            );
+
+
+        revealElements.forEach(
+            function(element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           APPOINTMENT FORM
+        ====================================================== */
+
+        const appointmentForm =
+            document.getElementById(
+                "hwAppointmentForm"
+            );
+
+
+        appointmentForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const button =
+                    appointmentForm
+                        .querySelector(
+                            "button"
+                        );
+
+                const originalText =
+                    button.textContent;
+
+                button.textContent =
+                    "Request Submitted ✓";
+
+                button.disabled = true;
+
+                setTimeout(
+                    function() {
+
+                        button.textContent =
+                            originalText;
+
+                        button.disabled =
+                            false;
+
+                        appointmentForm.reset();
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           DOCTOR SEARCH
+        ====================================================== */
+
+        const doctorSearch =
+            document.getElementById(
+                "doctorSearch"
+            );
+
+        const doctorSpecialty =
+            document.getElementById(
+                "doctorSpecialty"
+            );
+
+        const doctorCards =
+            document.querySelectorAll(
+                ".hw-doctor"
+            );
+
+
+        function filterDoctors() {
+
+            const search =
+                doctorSearch
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+            const specialty =
+                doctorSpecialty
+                    .value
+                    .toLowerCase()
+                    .trim();
+
+
+            doctorCards.forEach(
+                function(card) {
+
+                    const name =
+                        card.dataset.name
+                            .toLowerCase();
+
+                    const cardSpecialty =
+                        card.dataset.specialty
+                            .toLowerCase();
+
+                    const matchesSearch =
+                        !search ||
+                        name.includes(search) ||
+                        cardSpecialty.includes(
+                            search
+                        );
+
+                    const matchesSpecialty =
+                        !specialty ||
+                        cardSpecialty ===
+                            specialty;
+
+                    card.style.display =
+                        matchesSearch &&
+                        matchesSpecialty
+                            ? ""
+                            : "none";
+
+                }
+            );
+
+        }
+
+
+        doctorSearch.addEventListener(
+            "input",
+            filterDoctors
+        );
+
+
+        doctorSpecialty.addEventListener(
+            "change",
+            filterDoctors
+        );
+
+
+        /* =====================================================
+           HEADER SCROLL
+        ====================================================== */
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                if (
+                    window.scrollY > 20
+                ) {
+
+                    hwHeader.style.boxShadow =
+                        "0 8px 30px rgba(8,48,64,.07)";
+
+                } else {
+
+                    hwHeader.style.boxShadow =
+                        "none";
+
+                }
+
+            }
+        );
+
+        /* =========================================================
+           PROPOSAL NOTICE MODAL
+        ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const proposalModal = document.getElementById("proposalModal");
+            const proposalModalClose = document.getElementById("proposalModalClose");
+            const proposalModalContinue = document.getElementById("proposalModalContinue");
+            const proposalModalCard = document.querySelector(".proposal-modal-card");
+
+            if (!proposalModal) return;
+
+            function openProposalModal() {
+                proposalModal.classList.add("is-visible");
+                proposalModal.setAttribute("aria-hidden", "false");
+                document.body.classList.add("proposal-modal-open");
+                setTimeout(() => { if (proposalModalClose) proposalModalClose.focus(); }, 350);
+            }
+
+            function closeProposalModal() {
+                proposalModal.classList.remove("is-visible");
+                proposalModal.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("proposal-modal-open");
+            }
+
+            setTimeout(openProposalModal, 700);
+            if (proposalModalClose) proposalModalClose.addEventListener("click", closeProposalModal);
+            if (proposalModalContinue) proposalModalContinue.addEventListener("click", closeProposalModal);
+            proposalModal.addEventListener("click", function (event) { if (event.target.hasAttribute("data-proposal-close")) closeProposalModal(); });
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && proposalModal.classList.contains("is-visible")) closeProposalModal();
+            });
+
+            if (proposalModalCard) {
+                let proposalScrollTimer;
+                proposalModalCard.addEventListener("scroll", function () {
+                    proposalModalCard.classList.add("is-scrolling");
+                    clearTimeout(proposalScrollTimer);
+                    proposalScrollTimer = setTimeout(() => proposalModalCard.classList.remove("is-scrolling"), 700);
+                });
+            }
+        });
+
+    </script>
+
+</body>
+</html>
