@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#241c1b">
+<title>Ramel & Margie — Wedding Invitation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+:root{--ink:#342725;--cream:#f8f3eb;--rose:#b77e79;--gold:#c6a66b;--muted:#82716a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif}body.locked{overflow:hidden}button{font:inherit}.intro{position:fixed;inset:0;z-index:20;background:#211817;display:grid;place-items:center;overflow:hidden;transition:visibility 1.4s}.intro.done{visibility:hidden;pointer-events:none}.curtain{position:absolute;inset:0;display:flex;filter:drop-shadow(0 0 20px #0008)}.drape{position:absolute;top:0;bottom:0;width:53%;background:repeating-linear-gradient(90deg,#4c252a 0,#6a3439 7%,#3d2025 13%,#713940 20%,#48252a 27%);box-shadow:inset 0 0 45px #1c0f10,inset -12px 0 22px #1d1011;transition:transform 1.8s cubic-bezier(.76,0,.24,1)}.drape.left{left:0;border-right:2px solid #a66d58}.drape.right{right:0;border-left:2px solid #a66d58}.intro.open .drape.left{transform:translateX(-103%)}.intro.open .drape.right{transform:translateX(103%)}.curtain-top{position:absolute;top:0;left:0;right:0;height:24px;background:linear-gradient(#c7a06b,#70473e,#3d2223);z-index:2}.intro-content{z-index:3;text-align:center;color:#f8e8d2;padding:24px;transition:opacity .5s,transform .5s}.intro.open .intro-content{opacity:0;transform:scale(.9)}.monogram{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,8vw,76px);letter-spacing:7px;margin:0 0 8px}.intro-content p{letter-spacing:4px;text-transform:uppercase;font-size:10px;margin:0 0 28px}.play-button{width:76px;height:76px;border:1px solid #d8bb8d;border-radius:50%;background:#f4e7d51a;color:#f8e8d2;cursor:pointer;display:grid;place-items:center;margin:auto;transition:background .25s,transform .25s}.play-button:hover{background:#f4e7d52b;transform:scale(1.06)}.play-button svg{margin-left:4px}.open-label{font-size:10px;letter-spacing:3px;margin-top:14px!important}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:90px 24px 70px;position:relative;background:radial-gradient(ellipse at center,#fffdf9 0%,#f2e6d8 75%);overflow:hidden}.hero:before,.hero:after{content:"";position:absolute;width:min(38vw,300px);height:min(38vw,300px);border:1px solid #c6a66b80;border-radius:50%;pointer-events:none}.hero:before{top:28px;left:28px}.hero:after{right:28px;bottom:28px}.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose)}.hero h1{font:500 clamp(58px,11vw,120px)/.85 'Cormorant Garamond',serif;margin:30px 0 22px;letter-spacing:-2px}.amp{display:block;color:var(--gold);font-style:italic;font-size:.68em;margin:12px}.hero .date-line{letter-spacing:3px;text-transform:uppercase;font-size:11px;margin-top:30px}.ornament{color:var(--gold);font-size:25px;letter-spacing:8px}.scroll-hint{position:absolute;bottom:25px;left:0;right:0;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}.section{padding:95px 22px;text-align:center}.section-inner{max-width:850px;margin:auto}.section h2{font:500 clamp(42px,7vw,66px)/1 'Cormorant Garamond',serif;margin:15px 0 22px}.intro-copy{max-width:570px;line-height:1.9;color:#776761;margin:0 auto}.details{background:#eee2d6}.event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:42px;text-align:left}.event-card{padding:32px;border:1px solid #d6c2b0;background:rgba(248,243,235,.92);box-shadow:0 12px 32px rgba(70,44,35,.04);transition:transform .25s,box-shadow .25s}.event-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(70,44,35,.08)}.event-card .symbol{font-size:23px;color:var(--rose)}.event-card h3{font:500 34px 'Cormorant Garamond',serif;margin:15px 0 8px}.event-card p{color:#76645d;font-size:13px;line-height:1.8;margin:5px 0}.event-card .time{color:var(--ink);font-weight:600;letter-spacing:1px}.scratch-section{background:#2d2422;color:#f8eee2}.scratch-section .eyebrow{color:#d7b98a}.scratch-section .intro-copy{color:#d1bfb0}.scratch-wrap{max-width:470px;margin:34px auto 0}.scratch-card{position:relative;height:220px;background:#f8f0e5;color:var(--ink);overflow:hidden;display:grid;place-items:center;border:1px solid #d1b987}.scratch-reveal{text-align:center;padding:20px}.scratch-reveal small{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rose)}.scratch-reveal strong{display:block;font:500 clamp(28px,6vw,42px) 'Cormorant Garamond',serif;margin:10px 0}.scratch-reveal span{font-size:12px;letter-spacing:2px}.scratch-card canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair}.scratch-instruction{font-size:10px;letter-spacing:2px;color:#d1bfb0;margin-top:15px}.rsvp{background:#f8f3eb}.rsvp-button{display:inline-block;border:1px solid var(--rose);padding:15px 26px;margin-top:20px;color:var(--ink);text-decoration:none;font-size:10px;letter-spacing:3px;text-transform:uppercase;transition:.2s}.rsvp-button:hover{background:var(--rose);color:white}.footer{padding:35px 20px;text-align:center;background:#241c1b;color:#d9c6b7;font:italic 24px 'Cormorant Garamond',serif}.footer small{display:block;font:9px 'DM Sans',sans-serif;letter-spacing:3px;text-transform:uppercase;margin-top:8px;color:#a99486}.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.reveal.visible{opacity:1;transform:none}.petal{position:fixed;top:-20px;z-index:30;pointer-events:none;animation:fall linear forwards;opacity:.9}@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}@media(max-width:600px){.event-grid{grid-template-columns:1fr}.event-card{padding:25px}.hero:before{top:15px;left:15px}.hero:after{right:15px;bottom:15px}.section{padding:75px 20px}.intro-content p{letter-spacing:2px}.drape{width:54%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation-duration:.01ms!important}}
+</style>
+</head>
+<body class="locked">
+<div class="intro" id="intro" aria-label="Wedding invitation opening curtain">
+  <div class="curtain"><div class="curtain-top"></div><div class="drape left"></div><div class="drape right"></div></div>
+  <div class="intro-content">
+    <h1 class="monogram">R <span style="color:#c6a66b">&</span> M</h1>
+    <p>A celebration of love</p>
+    <button class="play-button" id="openInvite" aria-label="Open wedding invitation">
+      <i class="bx bx-play" aria-hidden="true"></i>
+    </button>
+    <p class="open-label">Tap to open</p>
+  </div>
+</div>
+<header class="hero">
+  <div class="reveal">
+    <div class="eyebrow">Together with our families</div>
+    <div class="ornament">✦ ❧ ✦</div>
+    <h1>Ramel <span class="amp">&</span> Margie</h1>
+    <p class="eyebrow">Invite you to celebrate their wedding</p>
+    <div class="date-line">Our forever begins here</div>
+    <div class="ornament" style="margin-top:28px">— ❦ —</div>
+  </div>
+  <div class="scroll-hint">Scroll to discover <span>↓</span></div>
+</header>
+<section class="section reveal">
+  <div class="section-inner">
+    <div class="eyebrow">Two hearts, one promise</div>
+    <h2>A day to remember</h2>
+    <p class="intro-copy">With love in our hearts and joy in our families, we invite you to be part of the beginning of our forever. Your presence will make our special day even more meaningful.</p>
+  </div>
+</section>
+<section class="section details">
+  <div class="section-inner reveal">
+    <div class="eyebrow">The celebration</div>
+    <h2>Join us for our day</h2>
+    <p class="intro-copy">Please join us as we say “I do” and celebrate a lifetime of love.</p>
+    <div class="event-grid">
+      <article class="event-card">
+        <div class="symbol">♡</div><div class="eyebrow">The ceremony</div>
+        <h3>Wedding Ceremony</h3>
+        <p class="time">TIME: 2:00 PM</p>
+        <p>VENUE: <strong>[Church / Ceremony Venue]</strong></p>
+        <p>[Street, City, Province]</p>
+      </article>
+      <article class="event-card">
+        <div class="symbol">✧</div><div class="eyebrow">Dinner & celebration</div>
+        <h3>Wedding Reception</h3>
+        <p class="time">TIME: 5:00 PM</p>
+        <p>VENUE: <strong>[Reception Venue]</strong></p>
+        <p>[Street, City, Province]</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section scratch-section">
+  <div class="section-inner reveal">
+    <div class="eyebrow">A little surprise</div>
+    <h2>Scratch to reveal our date</h2>
+    <p class="intro-copy">A special day is waiting underneath. Use your finger or mouse to scratch away the cover and reveal our wedding date.</p>
+    <div class="scratch-wrap">
+      <div class="scratch-card" id="scratchCard">
+        <div class="scratch-reveal">
+          <small>Save the date</small>
+          <strong>December 12, 2024</strong>
+          <span>THURSDAY · [TIME]</span>
+        </div>
+        <canvas id="scratchCanvas" aria-label="Scratch this surface to reveal the wedding date"></canvas>
+      </div>
+      <p class="scratch-instruction">✦ SCRATCH HERE ✦</p>
+    </div>
+  </div>
+</section>
+<section class="section rsvp">
+  <div class="section-inner reveal">
+    <div class="eyebrow">With love,</div>
+    <h2>We can't wait to see you</h2>
+    <p class="intro-copy">Your love, prayers, and presence are the greatest gifts we could ask for. Let’s make beautiful memories together!</p>
+    <a class="rsvp-button" href="mailto:your-email@example.com?subject=Wedding%20RSVP%20-%20Ramel%20%26%20Margie">Kindly RSVP</a>
+  </div>
+</section>
+<footer class="footer">Ramel & Margie <small>Forever starts with us · With love</small></footer>
+<script>
+const intro = document.getElementById('intro');
+const openButton = document.getElementById('openInvite');
+let opened = false;
+openButton.addEventListener('click', () => {
+  if (opened) return;
+  opened = true;
+  intro.classList.add('open');
+  document.body.classList.remove('locked');
+  setTimeout(() => intro.classList.add('done'), 1900);
+  launchConfetti(150);
+});
+function launchConfetti(count=100){
+  const colors=['#b77e79','#c6a66b','#f6e5d0','#fff9ef','#8c5655'];
+  for(let i=0;i<count;i++){
+    const bit=document.createElement('span');
+    bit.className='petal';
+    bit.textContent=Math.random()>.5?'✦':'❀';
+    bit.style.left=Math.random()*100+'vw';
+    bit.style.color=colors[Math.floor(Math.random()*colors.length)];
+    bit.style.fontSize=(10+Math.random()*14)+'px';
+    bit.style.animationDuration=(2.5+Math.random()*3)+'s';
+    bit.style.animationDelay=(Math.random()*.8)+'s';
+    document.body.appendChild(bit);
+    setTimeout(()=>bit.remove(),6500);
+  }
+}
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Scratch-to-reveal date card (mouse + touch).
+const canvas=document.getElementById('scratchCanvas');
+const ctx=canvas.getContext('2d',{willReadFrequently:true});
+let scratching=false, cleared=false;
+function setupScratch(){
+  const rect=canvas.getBoundingClientRect();
+  const dpr=Math.max(1,window.devicePixelRatio||1);
+  canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const grad=ctx.createLinearGradient(0,0,rect.width,rect.height);
+  grad.addColorStop(0,'#d5c5ae');grad.addColorStop(.5,'#b9a58d');grad.addColorStop(1,'#e0d2be');
+  ctx.globalCompositeOperation='source-over';ctx.fillStyle=grad;ctx.fillRect(0,0,rect.width,rect.height);
+  ctx.fillStyle='#59463d';ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.font='10px DM Sans, sans-serif';ctx.fillText('A LITTLE WEDDING SECRET',rect.width/2,rect.height/2-12);
+  ctx.font='24px Georgia, serif';ctx.fillText('✧  SCRATCH HERE  ✧',rect.width/2,rect.height/2+15);
+  ctx.globalCompositeOperation='destination-out';
+}
+function scratch(e){
+  if(cleared)return;
+  const rect=canvas.getBoundingClientRect();
+  const point=e.touches?e.touches[0]:e;
+  const x=point.clientX-rect.left,y=point.clientY-rect.top;
+  ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.fill();
+  if(Math.random()<.08) checkScratch();
+}
+function checkScratch(){
+  const rect=canvas.getBoundingClientRect();
+  const pixels=ctx.getImageData(0,0,canvas.width,canvas.height).data;
+  let transparent=0,total=0;
+  for(let i=3;i<pixels.length;i+=4){total++;if(pixels[i]<30)transparent++}
+  if(transparent/total>.42){
+    cleared=true;canvas.style.transition='opacity .5s';canvas.style.opacity='0';
+    setTimeout(()=>canvas.style.display='none',550);
+    launchConfetti(55);
+  }
+}
+canvas.addEventListener('pointerdown',e=>{scratching=true;canvas.setPointerCapture(e.pointerId);scratch(e)});
+canvas.addEventListener('pointermove',e=>{if(scratching)scratch(e)});
+canvas.addEventListener('pointerup',()=>{scratching=false;checkScratch()});
+canvas.addEventListener('pointercancel',()=>{scratching=false});
+window.addEventListener('resize',()=>{if(!cleared)setupScratch()});
+setupScratch();
+</script>
+</body>
+</html>
